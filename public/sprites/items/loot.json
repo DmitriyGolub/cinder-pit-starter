@@ -1,0 +1,69 @@
+{
+ "image": "loot.png",
+ "frames": {
+  "xp0": {
+   "x": 112,
+   "y": 0,
+   "width": 5,
+   "height": 10,
+   "originX": 2,
+   "originY": 5
+  },
+  "xp1": {
+   "x": 104,
+   "y": 0,
+   "width": 7,
+   "height": 14,
+   "originX": 3,
+   "originY": 7
+  },
+  "xp2": {
+   "x": 42,
+   "y": 0,
+   "width": 9,
+   "height": 18,
+   "originX": 4,
+   "originY": 9
+  },
+  "magnet": {
+   "x": 52,
+   "y": 0,
+   "width": 17,
+   "height": 18,
+   "originX": 8,
+   "originY": 9
+  },
+  "bomb": {
+   "x": 70,
+   "y": 0,
+   "width": 10,
+   "height": 16,
+   "originX": 5,
+   "originY": 8
+  },
+  "dagger": {
+   "x": 81,
+   "y": 0,
+   "width": 22,
+   "height": 16,
+   "originX": 11,
+   "originY": 8
+  },
+  "axe0": {
+   "x": 0,
+   "y": 0,
+   "width": 18,
+   "height": 22,
+   "originX": 9,
+   "originY": 11
+  },
+  "axe1": {
+   "x": 19,
+   "y": 0,
+   "width": 22,
+   "height": 20,
+   "originX": 11,
+   "originY": 10
+  }
+ }
+}

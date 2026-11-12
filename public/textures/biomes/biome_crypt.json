@@ -1,0 +1,41 @@
+{
+ "image": "biome_crypt.png",
+ "frames": {
+  "biome_crypt_wall0": {
+   "x": 0,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_crypt_wall1": {
+   "x": 65,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_crypt_ledge": {
+   "x": 130,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_crypt_floor0": {
+   "x": 0,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  },
+  "biome_crypt_floor1": {
+   "x": 65,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  },
+  "biome_crypt_floor2": {
+   "x": 130,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  }
+ }
+}

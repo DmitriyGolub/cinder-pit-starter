@@ -1,0 +1,37 @@
+{
+ "image": "missiles.png",
+ "frames": {
+  "arrow_side": {
+   "x": 33,
+   "y": 0,
+   "width": 30,
+   "height": 10,
+   "originX": 15,
+   "originY": 5
+  },
+  "bolt_side": {
+   "x": 64,
+   "y": 0,
+   "width": 30,
+   "height": 10,
+   "originX": 15,
+   "originY": 5
+  },
+  "ice_side": {
+   "x": 95,
+   "y": 0,
+   "width": 28,
+   "height": 10,
+   "originX": 14,
+   "originY": 5
+  },
+  "firearrow_side": {
+   "x": 0,
+   "y": 0,
+   "width": 32,
+   "height": 12,
+   "originX": 16,
+   "originY": 6
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/ts-code-atlas/schema/config.schema.json",
+  "sources": ["src"],
+  "tests": ["tests"],
+  "testHelpers": ["tests/support"],
+  "simulationHelpers": ["simulate", "runSystems"],
+  "out": "docs/code-atlas",
+  "layers": {
+    "components": "src/game/ecs/components",
+    "systems": "src/game/ecs/systems",
+    "entities": ["src/game/entities"],
+    "config": ["src/game/config"],
+    "game": "src/game",
+    "outside": ["src/app", "src/ui", "src/platform"]
+  },
+  "pipeline": {
+    "file": "src/game/ecs/systems/index.ts",
+    "entries": ["pipeline", "trainingPipeline"],
+    "view": "viewPipeline",
+    "modes": { "pipeline": "run", "trainingPipeline": "training" }
+  },
+  "criteria": {
+    "add": ["став", "вешает", "добав", "add"],
+    "remove": ["снима", "убира", "remove"]
+  },
+  "findings": {
+    "ignoreWriteOnlyIn": ["Level.ts", "src/game/combat/status.ts"]
+  }
+}

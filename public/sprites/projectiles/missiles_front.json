@@ -1,0 +1,37 @@
+{
+ "image": "missiles_front.png",
+ "frames": {
+  "arrow_front": {
+   "x": 17,
+   "y": 0,
+   "width": 15,
+   "height": 16,
+   "originX": 7,
+   "originY": 8
+  },
+  "bolt_front": {
+   "x": 33,
+   "y": 0,
+   "width": 15,
+   "height": 16,
+   "originX": 7,
+   "originY": 8
+  },
+  "ice_front": {
+   "x": 49,
+   "y": 0,
+   "width": 15,
+   "height": 16,
+   "originX": 7,
+   "originY": 8
+  },
+  "firearrow_front": {
+   "x": 0,
+   "y": 0,
+   "width": 16,
+   "height": 18,
+   "originX": 8,
+   "originY": 9
+  }
+ }
+}

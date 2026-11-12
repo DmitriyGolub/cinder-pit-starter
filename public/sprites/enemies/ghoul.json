@@ -1,0 +1,69 @@
+{
+ "image": "ghoul.png",
+ "frames": {
+  "ghoul_walk0": {
+   "x": 87,
+   "y": 0,
+   "width": 34,
+   "height": 60,
+   "originX": 17,
+   "originY": 60
+  },
+  "ghoul_walk1": {
+   "x": 207,
+   "y": 0,
+   "width": 33,
+   "height": 58,
+   "originX": 16,
+   "originY": 58
+  },
+  "ghoul_walk2": {
+   "x": 122,
+   "y": 0,
+   "width": 32,
+   "height": 60,
+   "originX": 16,
+   "originY": 60
+  },
+  "ghoul_walk3": {
+   "x": 0,
+   "y": 72,
+   "width": 29,
+   "height": 58,
+   "originX": 14,
+   "originY": 58
+  },
+  "ghoul_aim": {
+   "x": 0,
+   "y": 0,
+   "width": 43,
+   "height": 71,
+   "originX": 21,
+   "originY": 71
+  },
+  "ghoul_fire": {
+   "x": 155,
+   "y": 0,
+   "width": 51,
+   "height": 59,
+   "originX": 25,
+   "originY": 59
+  },
+  "ghoul_pain": {
+   "x": 44,
+   "y": 0,
+   "width": 42,
+   "height": 64,
+   "originX": 21,
+   "originY": 64
+  },
+  "ghoul_dead": {
+   "x": 30,
+   "y": 72,
+   "width": 60,
+   "height": 21,
+   "originX": 30,
+   "originY": 21
+  }
+ }
+}

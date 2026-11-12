@@ -1,0 +1,16 @@
+[
+ "enemies/skeleton.json",
+ "enemies/goblin.json",
+ "enemies/ghoul.json",
+ "enemies/bat.json",
+ "enemies/eye.json",
+ "enemies/minotaur.json",
+ "enemies/executioner.json",
+ "weapons/weapons.json",
+ "items/items.json",
+ "items/loot.json",
+ "effects/effects.json",
+ "projectiles/missiles.json",
+ "projectiles/orb.json",
+ "projectiles/missiles_front.json"
+]

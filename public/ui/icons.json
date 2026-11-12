@@ -1,0 +1,221 @@
+{
+ "image": "icons.png",
+ "frames": {
+  "bolt": {
+   "x": 0,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "axe": {
+   "x": 33,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "orbit": {
+   "x": 66,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "aura": {
+   "x": 99,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "shield": {
+   "x": 132,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "chain": {
+   "x": 165,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "bolt_evo": {
+   "x": 198,
+   "y": 0,
+   "width": 32,
+   "height": 32
+  },
+  "axe_evo": {
+   "x": 0,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "orbit_evo": {
+   "x": 33,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "aura_evo": {
+   "x": 66,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "shield_evo": {
+   "x": 99,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "chain_evo": {
+   "x": 132,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "wand": {
+   "x": 165,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "crossbow": {
+   "x": 198,
+   "y": 33,
+   "width": 32,
+   "height": 32
+  },
+  "staff": {
+   "x": 0,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "firestaff": {
+   "x": 33,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "might": {
+   "x": 66,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "area": {
+   "x": 99,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "haste": {
+   "x": 132,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "amount": {
+   "x": 165,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "speed": {
+   "x": 198,
+   "y": 66,
+   "width": 32,
+   "height": 32
+  },
+  "magnet": {
+   "x": 0,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "healthMax": {
+   "x": 33,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "regen": {
+   "x": 66,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "luck": {
+   "x": 99,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "greed": {
+   "x": 132,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "gold": {
+   "x": 165,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "kills": {
+   "x": 198,
+   "y": 99,
+   "width": 32,
+   "height": 32
+  },
+  "time": {
+   "x": 0,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "record": {
+   "x": 33,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_burn": {
+   "x": 66,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_chill": {
+   "x": 99,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_shock": {
+   "x": 132,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_poison": {
+   "x": 165,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_bleed": {
+   "x": 198,
+   "y": 132,
+   "width": 32,
+   "height": 32
+  },
+  "status_frozen": {
+   "x": 0,
+   "y": 165,
+   "width": 32,
+   "height": 32
+  }
+ }
+}

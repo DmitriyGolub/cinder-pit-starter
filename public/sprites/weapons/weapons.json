@@ -1,0 +1,69 @@
+{
+ "image": "weapons.png",
+ "frames": {
+  "wand_idle": {
+   "x": 155,
+   "y": 114,
+   "width": 88,
+   "height": 80,
+   "originX": -115,
+   "originY": -88
+  },
+  "wand_fire": {
+   "x": 74,
+   "y": 0,
+   "width": 88,
+   "height": 107,
+   "originX": -115,
+   "originY": -61
+  },
+  "crossbow_idle": {
+   "x": 97,
+   "y": 219,
+   "width": 96,
+   "height": 72,
+   "originX": -111,
+   "originY": -96
+  },
+  "crossbow_fire": {
+   "x": 0,
+   "y": 219,
+   "width": 96,
+   "height": 80,
+   "originX": -111,
+   "originY": -88
+  },
+  "staff_idle": {
+   "x": 163,
+   "y": 0,
+   "width": 73,
+   "height": 104,
+   "originX": -123,
+   "originY": -64
+  },
+  "staff_fire": {
+   "x": 0,
+   "y": 0,
+   "width": 73,
+   "height": 113,
+   "originX": -123,
+   "originY": -55
+  },
+  "firestaff_idle": {
+   "x": 0,
+   "y": 114,
+   "width": 74,
+   "height": 104,
+   "originX": -122,
+   "originY": -64
+  },
+  "firestaff_fire": {
+   "x": 75,
+   "y": 114,
+   "width": 79,
+   "height": 104,
+   "originX": -120,
+   "originY": -64
+  }
+ }
+}

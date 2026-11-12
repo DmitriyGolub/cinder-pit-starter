@@ -1,0 +1,69 @@
+{
+ "image": "skeleton.png",
+ "frames": {
+  "skeleton_walk0": {
+   "x": 86,
+   "y": 0,
+   "width": 32,
+   "height": 64,
+   "originX": 16,
+   "originY": 64
+  },
+  "skeleton_walk1": {
+   "x": 151,
+   "y": 0,
+   "width": 31,
+   "height": 63,
+   "originX": 15,
+   "originY": 63
+  },
+  "skeleton_walk2": {
+   "x": 119,
+   "y": 0,
+   "width": 31,
+   "height": 64,
+   "originX": 15,
+   "originY": 64
+  },
+  "skeleton_walk3": {
+   "x": 183,
+   "y": 0,
+   "width": 30,
+   "height": 63,
+   "originX": 15,
+   "originY": 63
+  },
+  "skeleton_aim": {
+   "x": 0,
+   "y": 0,
+   "width": 42,
+   "height": 66,
+   "originX": 21,
+   "originY": 66
+  },
+  "skeleton_fire": {
+   "x": 43,
+   "y": 0,
+   "width": 42,
+   "height": 66,
+   "originX": 21,
+   "originY": 66
+  },
+  "skeleton_pain": {
+   "x": 0,
+   "y": 67,
+   "width": 44,
+   "height": 62,
+   "originX": 22,
+   "originY": 62
+  },
+  "skeleton_dead": {
+   "x": 45,
+   "y": 67,
+   "width": 56,
+   "height": 19,
+   "originX": 28,
+   "originY": 19
+  }
+ }
+}

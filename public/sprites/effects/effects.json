@@ -1,0 +1,69 @@
+{
+ "image": "effects.png",
+ "frames": {
+  "fireball0": {
+   "x": 187,
+   "y": 0,
+   "width": 18,
+   "height": 9,
+   "originX": 9,
+   "originY": 4
+  },
+  "fireball1": {
+   "x": 151,
+   "y": 0,
+   "width": 18,
+   "height": 12,
+   "originX": 9,
+   "originY": 6
+  },
+  "arcane0": {
+   "x": 170,
+   "y": 0,
+   "width": 16,
+   "height": 12,
+   "originX": 8,
+   "originY": 6
+  },
+  "arcane1": {
+   "x": 134,
+   "y": 0,
+   "width": 16,
+   "height": 15,
+   "originX": 8,
+   "originY": 7
+  },
+  "boom0": {
+   "x": 86,
+   "y": 0,
+   "width": 26,
+   "height": 23,
+   "originX": 13,
+   "originY": 11
+  },
+  "boom1": {
+   "x": 0,
+   "y": 0,
+   "width": 44,
+   "height": 39,
+   "originX": 22,
+   "originY": 19
+  },
+  "boom2": {
+   "x": 45,
+   "y": 0,
+   "width": 40,
+   "height": 37,
+   "originX": 20,
+   "originY": 18
+  },
+  "blood0": {
+   "x": 113,
+   "y": 0,
+   "width": 20,
+   "height": 20,
+   "originX": 10,
+   "originY": 10
+  }
+ }
+}

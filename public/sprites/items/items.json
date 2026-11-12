@@ -1,0 +1,69 @@
+{
+ "image": "items.png",
+ "frames": {
+  "potion": {
+   "x": 29,
+   "y": 0,
+   "width": 15,
+   "height": 20,
+   "originX": 7,
+   "originY": 20
+  },
+  "chest": {
+   "x": 76,
+   "y": 0,
+   "width": 24,
+   "height": 19,
+   "originX": 12,
+   "originY": 19
+  },
+  "barrel": {
+   "x": 0,
+   "y": 0,
+   "width": 28,
+   "height": 34,
+   "originX": 14,
+   "originY": 34
+  },
+  "crossbow": {
+   "x": 45,
+   "y": 0,
+   "width": 30,
+   "height": 20,
+   "originX": 15,
+   "originY": 20
+  },
+  "staff": {
+   "x": 101,
+   "y": 0,
+   "width": 32,
+   "height": 18,
+   "originX": 16,
+   "originY": 18
+  },
+  "firestaff": {
+   "x": 134,
+   "y": 0,
+   "width": 32,
+   "height": 18,
+   "originX": 16,
+   "originY": 18
+  },
+  "coin": {
+   "x": 167,
+   "y": 0,
+   "width": 10,
+   "height": 10,
+   "originX": 5,
+   "originY": 10
+  },
+  "coinpile": {
+   "x": 178,
+   "y": 0,
+   "width": 14,
+   "height": 7,
+   "originX": 7,
+   "originY": 7
+  }
+ }
+}

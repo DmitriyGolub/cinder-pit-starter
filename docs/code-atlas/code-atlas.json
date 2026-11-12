@@ -1,0 +1,6010 @@
+{
+ "$schema": "./code-atlas.schema.json",
+ "codeAtlas": "1.0",
+ "sourceDigest": "f0521fa76763d815",
+ "frame": [
+  "clockSystem",
+  "spatialSystem",
+  "lifetimeSystem",
+  "cleanupSystem",
+  "cameraSystem"
+ ],
+ "systems": [
+  {
+   "id": "src/game/ecs/systems/core/clockSystem.ts#clockSystem",
+   "name": "clockSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/clockSystem.ts",
+   "line": 3,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "domain": "core",
+   "position": 1,
+   "phase": "simulation",
+   "mode": "all",
+   "queries": [],
+   "reads": [],
+   "writes": [],
+   "adds": [],
+   "removes": [],
+   "eventReads": [],
+   "eventWrites": [],
+   "ports": [],
+   "rules": [],
+   "creates": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem",
+   "name": "spatialSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/spatialSystem.ts",
+   "line": 7,
+   "lines": 4,
+   "complexity": 2,
+   "exported": true,
+   "domain": "core",
+   "position": 2,
+   "phase": "simulation",
+   "mode": "all",
+   "queries": [
+    {
+     "name": "shootableQuery",
+     "terms": [
+      "Position",
+      "Body",
+      "Shootable"
+     ],
+     "file": "src/game/ecs/systems/core/spatialSystem.ts",
+     "line": 5
+    }
+   ],
+   "reads": [
+    {
+     "value": "Position.x",
+     "file": "src/game/ecs/systems/core/spatialSystem.ts",
+     "line": 9,
+     "via": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem"
+    },
+    {
+     "value": "Position.y",
+     "file": "src/game/ecs/systems/core/spatialSystem.ts",
+     "line": 9,
+     "via": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem"
+    }
+   ],
+   "writes": [],
+   "adds": [],
+   "removes": [],
+   "eventReads": [],
+   "eventWrites": [],
+   "ports": [],
+   "rules": [],
+   "creates": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem",
+   "name": "lifetimeSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+   "line": 7,
+   "lines": 6,
+   "complexity": 3,
+   "exported": true,
+   "domain": "core",
+   "position": 3,
+   "phase": "simulation",
+   "mode": "all",
+   "queries": [
+    {
+     "name": "lifetimeQuery",
+     "terms": [
+      "Lifetime"
+     ],
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 5
+    }
+   ],
+   "reads": [
+    {
+     "value": "Lifetime.left",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 9,
+     "via": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem"
+    },
+    {
+     "value": "Lifetime.left",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 10,
+     "via": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem"
+    }
+   ],
+   "writes": [
+    {
+     "value": "Lifetime.left",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 9,
+     "via": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem"
+    }
+   ],
+   "adds": [
+    {
+     "value": "Destroyed",
+     "file": "src/game/ecs/world.ts",
+     "line": 55,
+     "via": "src/game/ecs/world.ts#destroyEntity"
+    }
+   ],
+   "removes": [],
+   "eventReads": [],
+   "eventWrites": [],
+   "ports": [],
+   "rules": [
+    {
+     "value": "src/game/ecs/world.ts#destroyEntity",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 10
+    }
+   ],
+   "creates": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem",
+   "name": "cleanupSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+   "line": 8,
+   "lines": 7,
+   "complexity": 2,
+   "exported": true,
+   "domain": "core",
+   "position": 4,
+   "phase": "simulation",
+   "mode": "all",
+   "queries": [
+    {
+     "name": "destroyedQuery",
+     "terms": [
+      "Destroyed"
+     ],
+     "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+     "line": 6
+    }
+   ],
+   "reads": [],
+   "writes": [
+    {
+     "value": "Health.hp",
+     "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+     "line": 10,
+     "via": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem"
+    },
+    {
+     "value": "Faction.side",
+     "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+     "line": 11,
+     "via": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem"
+    }
+   ],
+   "adds": [],
+   "removes": [],
+   "eventReads": [],
+   "eventWrites": [],
+   "ports": [],
+   "rules": [],
+   "creates": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+   "name": "cameraSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 38,
+   "lines": 16,
+   "complexity": 3,
+   "exported": true,
+   "domain": "view",
+   "position": 5,
+   "phase": "view",
+   "mode": "all",
+   "queries": [
+    {
+     "name": "livingPlayerQuery",
+     "terms": [
+      "Player",
+      "Position",
+      "Rotation",
+      "Velocity",
+      "ViewRig",
+      "Not(Dead)"
+     ],
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 8
+    },
+    {
+     "name": "deadPlayerQuery",
+     "terms": [
+      "Player",
+      "Position",
+      "Rotation",
+      "Velocity",
+      "ViewRig",
+      "Dead"
+     ],
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 9
+    }
+   ],
+   "reads": [
+    {
+     "value": "Position.x",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 46,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem"
+    },
+    {
+     "value": "Position.y",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 47,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem"
+    },
+    {
+     "value": "ViewRig.height",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 48,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem"
+    },
+    {
+     "value": "Rotation.yaw",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 49,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem"
+    },
+    {
+     "value": "ViewRig.height",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 13,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#followHeight"
+    },
+    {
+     "value": "Position.z",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 13,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#followHeight"
+    },
+    {
+     "value": "ViewRig.height",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 13,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#followHeight"
+    },
+    {
+     "value": "Velocity.x",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 17,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight"
+    },
+    {
+     "value": "Velocity.y",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 17,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight"
+    },
+    {
+     "value": "ViewRig.bob",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 18,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight"
+    },
+    {
+     "value": "ViewRig.bob",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 20,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight"
+    },
+    {
+     "value": "ViewRig.shake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 24,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    },
+    {
+     "value": "ViewRig.shake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 25,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    },
+    {
+     "value": "ViewRig.shake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 26,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    }
+   ],
+   "writes": [
+    {
+     "value": "ViewRig.height",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 13,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#followHeight"
+    },
+    {
+     "value": "ViewRig.bob",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 18,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight"
+    },
+    {
+     "value": "ViewRig.shake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 24,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    },
+    {
+     "value": "ViewRig.shake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 25,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    }
+   ],
+   "adds": [],
+   "removes": [],
+   "eventReads": [
+    {
+     "value": "impact",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 24,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    },
+    {
+     "value": "impact",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 24,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#updateShake"
+    }
+   ],
+   "eventWrites": [],
+   "ports": [
+    {
+     "value": "render.setCamera",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 45,
+     "via": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem"
+    }
+   ],
+   "rules": [
+    {
+     "value": "src/game/ecs/systems/view/cameraSystem.ts#followHeight",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 42
+    },
+    {
+     "value": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 43
+    },
+    {
+     "value": "src/game/ecs/systems/view/cameraSystem.ts#shakeOffset",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    },
+    {
+     "value": "src/game/ecs/systems/view/cameraSystem.ts#updateShake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    },
+    {
+     "value": "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 40
+    }
+   ],
+   "creates": []
+  }
+ ],
+ "units": [
+  {
+   "id": "src/app/game.ts#createGame",
+   "name": "createGame",
+   "kind": "outside",
+   "file": "src/app/game.ts",
+   "line": 26,
+   "lines": 66,
+   "complexity": 9,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/App.tsx#App",
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 16
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/app/hudStore.ts#createHudStore",
+     "name": "createHudStore",
+     "file": "src/app/game.ts",
+     "line": 27
+    },
+    {
+     "unit": "src/platform/render/RenderContext.ts#createRenderContext",
+     "name": "createRenderContext",
+     "file": "src/app/game.ts",
+     "line": 28
+    },
+    {
+     "unit": "src/platform/device.ts#isMobile",
+     "name": "isMobile",
+     "file": "src/app/game.ts",
+     "line": 29
+    },
+    {
+     "unit": "src/platform/input/touchInput.ts#createTouchInput",
+     "name": "createTouchInput",
+     "file": "src/app/game.ts",
+     "line": 29
+    },
+    {
+     "unit": "src/platform/input/keyboardMouseInput.ts#createKeyboardMouseInput",
+     "name": "createKeyboardMouseInput",
+     "file": "src/app/game.ts",
+     "line": 29
+    },
+    {
+     "unit": "src/app/hudStore.ts#createHudPort",
+     "name": "createHudPort",
+     "file": "src/app/game.ts",
+     "line": 30
+    },
+    {
+     "unit": "src/platform/storage/saveStorage.ts#loadSave",
+     "name": "loadSave",
+     "file": "src/app/game.ts",
+     "line": 31
+    },
+    {
+     "unit": "src/app/session.ts#createRun",
+     "name": "createRun",
+     "file": "src/app/game.ts",
+     "line": 32
+    },
+    {
+     "unit": "src/app/session.ts#createRun",
+     "name": "createRun",
+     "file": "src/app/game.ts",
+     "line": 43
+    },
+    {
+     "unit": "src/game/ecs/world.ts#beginFrame",
+     "name": "beginFrame",
+     "file": "src/app/game.ts",
+     "line": 60
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#runSystems",
+     "name": "runSystems",
+     "file": "src/app/game.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/ecs/world.ts#beginFrame",
+     "name": "beginFrame",
+     "file": "src/app/game.ts",
+     "line": 63
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#runView",
+     "name": "runView",
+     "file": "src/app/game.ts",
+     "line": 64
+    }
+   ]
+  },
+  {
+   "id": "src/app/hudStore.ts#createHudPort",
+   "name": "createHudPort",
+   "kind": "outside",
+   "file": "src/app/hudStore.ts",
+   "line": 53,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 30
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/app/hudStore.ts#createHudStore",
+   "name": "createHudStore",
+   "kind": "outside",
+   "file": "src/app/hudStore.ts",
+   "line": 35,
+   "lines": 17,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 27
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/app/session.ts#createRun",
+   "name": "createRun",
+   "kind": "outside",
+   "file": "src/app/session.ts",
+   "line": 16,
+   "lines": 11,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 32
+    },
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 43
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/world.ts#createGameWorld",
+     "name": "createGameWorld",
+     "file": "src/app/session.ts",
+     "line": 17
+    },
+    {
+     "unit": "src/game/math/random.ts#mulberry32",
+     "name": "mulberry32",
+     "file": "src/app/session.ts",
+     "line": 20
+    },
+    {
+     "unit": "src/game/physics/spatialHash.ts#createSpatialHash",
+     "name": "createSpatialHash",
+     "file": "src/app/session.ts",
+     "line": 21
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/arena.ts#ARENA",
+   "name": "ARENA",
+   "kind": "config",
+   "file": "src/game/config/arena.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/arena.ts#ARENA_NOISE",
+   "name": "ARENA_NOISE",
+   "kind": "config",
+   "file": "src/game/config/arena.ts",
+   "line": 3,
+   "lines": 6,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/arena.ts#ARENA_SHIFT",
+   "name": "ARENA_SHIFT",
+   "kind": "config",
+   "file": "src/game/config/arena.ts",
+   "line": 10,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/arena.ts#LEVEL_LIGHT",
+   "name": "LEVEL_LIGHT",
+   "kind": "config",
+   "file": "src/game/config/arena.ts",
+   "line": 12,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/biomes.ts#BIOMES",
+   "name": "BIOMES",
+   "kind": "config",
+   "file": "src/game/config/biomes.ts",
+   "line": 7,
+   "lines": 6,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/biomes.ts#BIOME_NOISE",
+   "name": "BIOME_NOISE",
+   "kind": "config",
+   "file": "src/game/config/biomes.ts",
+   "line": 16,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/biomes.ts#BIOME_TILES",
+   "name": "BIOME_TILES",
+   "kind": "config",
+   "file": "src/game/config/biomes.ts",
+   "line": 14,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/biomes.ts#biomeTexture",
+   "name": "biomeTexture",
+   "kind": "config",
+   "file": "src/game/config/biomes.ts",
+   "line": 18,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/textures.ts#loadBiome",
+     "name": "loadBiome",
+     "file": "src/platform/assets/textures.ts",
+     "line": 19
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/combat.ts#CRIT",
+   "name": "CRIT",
+   "kind": "config",
+   "file": "src/game/config/combat.ts",
+   "line": 17,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/combat.ts#KNOCKBACK",
+   "name": "KNOCKBACK",
+   "kind": "config",
+   "file": "src/game/config/combat.ts",
+   "line": 1,
+   "lines": 11,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/combat.ts#PLAYER_SHOT",
+   "name": "PLAYER_SHOT",
+   "kind": "config",
+   "file": "src/game/config/combat.ts",
+   "line": 13,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/combat.ts#PROJECTILE",
+   "name": "PROJECTILE",
+   "kind": "config",
+   "file": "src/game/config/combat.ts",
+   "line": 15,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/controls.ts#KEYS",
+   "name": "KEYS",
+   "kind": "config",
+   "file": "src/game/config/controls.ts",
+   "line": 5,
+   "lines": 15,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/controls.ts#LOOK_SENSITIVITY",
+   "name": "LOOK_SENSITIVITY",
+   "kind": "config",
+   "file": "src/game/config/controls.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/controls.ts#STICK",
+   "name": "STICK",
+   "kind": "config",
+   "file": "src/game/config/controls.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/effects.ts#EFFECTS",
+   "name": "EFFECTS",
+   "kind": "config",
+   "file": "src/game/config/effects.ts",
+   "line": 9,
+   "lines": 7,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/effects.ts#EFFECT_Z",
+   "name": "EFFECT_Z",
+   "kind": "config",
+   "file": "src/game/config/effects.ts",
+   "line": 19,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/elements.ts#ELEMENTS",
+   "name": "ELEMENTS",
+   "kind": "config",
+   "file": "src/game/config/elements.ts",
+   "line": 13,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#CONTACT",
+   "name": "CONTACT",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 91,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#ENEMIES",
+   "name": "ENEMIES",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 47,
+   "lines": 37,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#ENEMY_AI",
+   "name": "ENEMY_AI",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 85,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#ENEMY_SHOT",
+   "name": "ENEMY_SHOT",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 89,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#ENEMY_TIERS",
+   "name": "ENEMY_TIERS",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 87,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/enemies.ts#MELEE_BACKSTEP",
+   "name": "MELEE_BACKSTEP",
+   "kind": "config",
+   "file": "src/game/config/enemies.ts",
+   "line": 93,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/engine.ts#DELTA_MAX",
+   "name": "DELTA_MAX",
+   "kind": "config",
+   "file": "src/game/config/engine.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/engine.ts#ENTITIES_MAX",
+   "name": "ENTITIES_MAX",
+   "kind": "config",
+   "file": "src/game/config/engine.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/engine.ts#SYSTEM_INTERVALS",
+   "name": "SYSTEM_INTERVALS",
+   "kind": "config",
+   "file": "src/game/config/engine.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/heroes.ts#DEFAULT_HERO",
+   "name": "DEFAULT_HERO",
+   "kind": "config",
+   "file": "src/game/config/heroes.ts",
+   "line": 32,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/heroes.ts#HEROES",
+   "name": "HEROES",
+   "kind": "config",
+   "file": "src/game/config/heroes.ts",
+   "line": 20,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/heroes.ts#HERO_IDS",
+   "name": "HERO_IDS",
+   "kind": "config",
+   "file": "src/game/config/heroes.ts",
+   "line": 30,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/heroes.ts#LOCKED_HEROES",
+   "name": "LOCKED_HEROES",
+   "kind": "config",
+   "file": "src/game/config/heroes.ts",
+   "line": 34,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/heroes.ts#heroById",
+   "name": "heroById",
+   "kind": "config",
+   "file": "src/game/config/heroes.ts",
+   "line": 36,
+   "lines": 3,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 26
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/hud.ts#HUD_BUFFS",
+   "name": "HUD_BUFFS",
+   "kind": "config",
+   "file": "src/game/config/hud.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/hud.ts#HUD_VIEW",
+   "name": "HUD_VIEW",
+   "kind": "config",
+   "file": "src/game/config/hud.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/icons.ts#GOLD_ICON",
+   "name": "GOLD_ICON",
+   "kind": "config",
+   "file": "src/game/config/icons.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/icons.ts#KILLS_ICON",
+   "name": "KILLS_ICON",
+   "kind": "config",
+   "file": "src/game/config/icons.ts",
+   "line": 4,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/icons.ts#TIME_ICON",
+   "name": "TIME_ICON",
+   "kind": "config",
+   "file": "src/game/config/icons.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/icons.ts#skillIcon",
+   "name": "skillIcon",
+   "kind": "config",
+   "file": "src/game/config/icons.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#BOMB",
+   "name": "BOMB",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 16,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#CHEST_COINS",
+   "name": "CHEST_COINS",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 22,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#DROPS",
+   "name": "DROPS",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 12,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#GOLD_CHOICE",
+   "name": "GOLD_CHOICE",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 24,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#PICKUP_VIEW",
+   "name": "PICKUP_VIEW",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 28,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#POTION_HEAL",
+   "name": "POTION_HEAL",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 14,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#PULL",
+   "name": "PULL",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 20,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#WEAPON_GLOW",
+   "name": "WEAPON_GLOW",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 18,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/loot.ts#gemStyle",
+   "name": "gemStyle",
+   "kind": "config",
+   "file": "src/game/config/loot.ts",
+   "line": 10,
+   "lines": 1,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/messages.ts#MESSAGES",
+   "name": "MESSAGES",
+   "kind": "config",
+   "file": "src/game/config/messages.ts",
+   "line": 1,
+   "lines": 15,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/meta.ts#META",
+   "name": "META",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 14,
+   "lines": 8,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/meta.ts#META_IDS",
+   "name": "META_IDS",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 23,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/meta.ts#isMetaId",
+   "name": "isMetaId",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 25,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/meta.ts#metaBonusText",
+   "name": "metaBonusText",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 38,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/game/config/statText.ts#statBonusText",
+     "name": "statBonusText",
+     "file": "src/game/config/meta.ts",
+     "line": 39
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/meta.ts#metaLevel",
+   "name": "metaLevel",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 29,
+   "lines": 3,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/config/meta.ts#metaState",
+     "name": "metaState",
+     "file": "src/game/config/meta.ts",
+     "line": 34
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/meta.ts#metaState",
+   "name": "metaState",
+   "kind": "config",
+   "file": "src/game/config/meta.ts",
+   "line": 33,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/game/config/meta.ts#metaLevel",
+     "name": "metaLevel",
+     "file": "src/game/config/meta.ts",
+     "line": 34
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/passives.ts#PASSIVES",
+   "name": "PASSIVES",
+   "kind": "config",
+   "file": "src/game/config/passives.ts",
+   "line": 17,
+   "lines": 12,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 18
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 19
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 20
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 21
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 22
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 23
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 24
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 25
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 26
+    },
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 27
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/passives.ts#PASSIVE_IDS",
+   "name": "PASSIVE_IDS",
+   "kind": "config",
+   "file": "src/game/config/passives.ts",
+   "line": 30,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/physics.ts#GRAVITY",
+   "name": "GRAVITY",
+   "kind": "config",
+   "file": "src/game/config/physics.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/physics.ts#GROUND_EPSILON",
+   "name": "GROUND_EPSILON",
+   "kind": "config",
+   "file": "src/game/config/physics.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/physics.ts#HASH_PADDING",
+   "name": "HASH_PADDING",
+   "kind": "config",
+   "file": "src/game/config/physics.ts",
+   "line": 9,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/physics.ts#SEPARATION",
+   "name": "SEPARATION",
+   "kind": "config",
+   "file": "src/game/config/physics.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/physics.ts#STEP_HEIGHT",
+   "name": "STEP_HEIGHT",
+   "kind": "config",
+   "file": "src/game/config/physics.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/player.ts#PLAYER",
+   "name": "PLAYER",
+   "kind": "config",
+   "file": "src/game/config/player.ts",
+   "line": 1,
+   "lines": 14,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/progression.ts#CHOICES",
+   "name": "CHOICES",
+   "kind": "config",
+   "file": "src/game/config/progression.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/progression.ts#xpForLevel",
+   "name": "xpForLevel",
+   "kind": "config",
+   "file": "src/game/config/progression.ts",
+   "line": 4,
+   "lines": 2,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/run.ts#RUN",
+   "name": "RUN",
+   "kind": "config",
+   "file": "src/game/config/run.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/skills.ts#SKILLS",
+   "name": "SKILLS",
+   "kind": "config",
+   "file": "src/game/config/skills.ts",
+   "line": 33,
+   "lines": 38,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 36
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 36
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 36
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 36
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 36
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 41
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 41
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 41
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 41
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 41
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 51
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 51
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 51
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 51
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 51
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 56
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 56
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 56
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 56
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 56
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 61
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 64
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 65
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 66
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 67
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 68
+    },
+    {
+     "unit": "src/game/config/skills.ts#level",
+     "name": "level",
+     "file": "src/game/config/skills.ts",
+     "line": 69
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/skills.ts#SKILL_IDS",
+   "name": "SKILL_IDS",
+   "kind": "config",
+   "file": "src/game/config/skills.ts",
+   "line": 93,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/skills.ts#SKILL_TUNING",
+   "name": "SKILL_TUNING",
+   "kind": "config",
+   "file": "src/game/config/skills.ts",
+   "line": 72,
+   "lines": 20,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/skills.ts#SLOTS_MAX",
+   "name": "SLOTS_MAX",
+   "kind": "config",
+   "file": "src/game/config/skills.ts",
+   "line": 94,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/spawn.ts#BARRELS",
+   "name": "BARRELS",
+   "kind": "config",
+   "file": "src/game/config/spawn.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/spawn.ts#BARREL_TABLE",
+   "name": "BARREL_TABLE",
+   "kind": "config",
+   "file": "src/game/config/spawn.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/spawn.ts#SPAWN",
+   "name": "SPAWN",
+   "kind": "config",
+   "file": "src/game/config/spawn.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/statText.ts#statAmountText",
+   "name": "statAmountText",
+   "kind": "config",
+   "file": "src/game/config/statText.ts",
+   "line": 25,
+   "lines": 6,
+   "complexity": 4,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/config/statText.ts#statBonusText",
+     "name": "statBonusText",
+     "file": "src/game/config/statText.ts",
+     "line": 32
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/statText.ts#statBonusText",
+   "name": "statBonusText",
+   "kind": "config",
+   "file": "src/game/config/statText.ts",
+   "line": 32,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/config/passives.ts#passive",
+     "name": "passive",
+     "file": "src/game/config/passives.ts",
+     "line": 15
+    },
+    {
+     "unit": "src/game/config/meta.ts#metaBonusText",
+     "name": "metaBonusText",
+     "file": "src/game/config/meta.ts",
+     "line": 39
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/config/statText.ts#statAmountText",
+     "name": "statAmountText",
+     "file": "src/game/config/statText.ts",
+     "line": 32
+    }
+   ]
+  },
+  {
+   "id": "src/game/config/stats.ts#BASE_STATS",
+   "name": "BASE_STATS",
+   "kind": "config",
+   "file": "src/game/config/stats.ts",
+   "line": 5,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/stats.ts#STAT_LIMITS",
+   "name": "STAT_LIMITS",
+   "kind": "config",
+   "file": "src/game/config/stats.ts",
+   "line": 9,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/status.ts#ELEMENT_STATUS",
+   "name": "ELEMENT_STATUS",
+   "kind": "config",
+   "file": "src/game/config/status.ts",
+   "line": 36,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/status.ts#FROZEN_ICON",
+   "name": "FROZEN_ICON",
+   "kind": "config",
+   "file": "src/game/config/status.ts",
+   "line": 34,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/status.ts#NO_STATUS",
+   "name": "NO_STATUS",
+   "kind": "config",
+   "file": "src/game/config/status.ts",
+   "line": 6,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/status.ts#STATUS",
+   "name": "STATUS",
+   "kind": "config",
+   "file": "src/game/config/status.ts",
+   "line": 26,
+   "lines": 7,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/status.ts#StatusId",
+   "name": "StatusId",
+   "kind": "config",
+   "file": "src/game/config/status.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/training.ts#TRAINING",
+   "name": "TRAINING",
+   "kind": "config",
+   "file": "src/game/config/training.ts",
+   "line": 3,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#AURA_SHADER",
+   "name": "AURA_SHADER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 62,
+   "lines": 5,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#AURA_VIEW",
+   "name": "AURA_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 40,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#CAMERA",
+   "name": "CAMERA",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#CONFIRM_LIFE",
+   "name": "CONFIRM_LIFE",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 30,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#ENEMY_WALK",
+   "name": "ENEMY_WALK",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 32,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#FLOAT",
+   "name": "FLOAT",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 34,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#GLOW_SHADER",
+   "name": "GLOW_SHADER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 50,
+   "lines": 5,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#HAZE_SHADER",
+   "name": "HAZE_SHADER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 56,
+   "lines": 5,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#HURT_ARC",
+   "name": "HURT_ARC",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 28,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#IMPACT",
+   "name": "IMPACT",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 93,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#INDICATORS",
+   "name": "INDICATORS",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#LEVEL_VIEW",
+   "name": "LEVEL_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 44,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#LIGHTNING",
+   "name": "LIGHTNING",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 42,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#MELEE_VIEW",
+   "name": "MELEE_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 82,
+   "lines": 10,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#NUMBERS",
+   "name": "NUMBERS",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 9,
+   "lines": 16,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#NUMBER_STYLE",
+   "name": "NUMBER_STYLE",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#PROCS",
+   "name": "PROCS",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 26,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#RENDER",
+   "name": "RENDER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 68,
+   "lines": 11,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#SHADOW_SHADER",
+   "name": "SHADOW_SHADER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 97,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#SHADOW_VIEW",
+   "name": "SHADOW_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 95,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#SPIN_MIN",
+   "name": "SPIN_MIN",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 38,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#SPRITE_SHADER",
+   "name": "SPRITE_SHADER",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 48,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#STATUS_VIEW",
+   "name": "STATUS_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 80,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#VIEW_FRONT",
+   "name": "VIEW_FRONT",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 36,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#VIEW_SCREEN",
+   "name": "VIEW_SCREEN",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 46,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/view.ts#WEAPON_VIEW",
+   "name": "WEAPON_VIEW",
+   "kind": "config",
+   "file": "src/game/config/view.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#BOSSES",
+   "name": "BOSSES",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 40,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#BOSS_TIERS",
+   "name": "BOSS_TIERS",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 30,
+   "lines": 7,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#ELITE",
+   "name": "ELITE",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 20,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#HP_PER_MINUTE",
+   "name": "HP_PER_MINUTE",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 44,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#SWARM",
+   "name": "SWARM",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 21,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#WAVES",
+   "name": "WAVES",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 11,
+   "lines": 8,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/waves.ts#waveIndex",
+   "name": "waveIndex",
+   "kind": "config",
+   "file": "src/game/config/waves.ts",
+   "line": 46,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#STARTING_WEAPON",
+   "name": "STARTING_WEAPON",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 42,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#WEAPONS",
+   "name": "WEAPONS",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 34,
+   "lines": 6,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#WEAPON_IDS",
+   "name": "WEAPON_IDS",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 41,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#WEAPON_LEVEL_MAX",
+   "name": "WEAPON_LEVEL_MAX",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 44,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#WEAPON_RAISE",
+   "name": "WEAPON_RAISE",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 56,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/config/weapons.ts#upgradeDescription",
+   "name": "upgradeDescription",
+   "kind": "config",
+   "file": "src/game/config/weapons.ts",
+   "line": 54,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/health.ts#Faction",
+   "name": "Faction",
+   "kind": "component",
+   "file": "src/game/ecs/components/health.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/health.ts#Health",
+   "name": "Health",
+   "kind": "component",
+   "file": "src/game/ecs/components/health.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/health.ts#Side",
+   "name": "Side",
+   "kind": "component",
+   "file": "src/game/ecs/components/health.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/lifetime.ts#Destroyed",
+   "name": "Destroyed",
+   "kind": "component",
+   "file": "src/game/ecs/components/lifetime.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/lifetime.ts#Lifetime",
+   "name": "Lifetime",
+   "kind": "component",
+   "file": "src/game/ecs/components/lifetime.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/physics.ts#Body",
+   "name": "Body",
+   "kind": "component",
+   "file": "src/game/ecs/components/physics.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/physics.ts#Shootable",
+   "name": "Shootable",
+   "kind": "component",
+   "file": "src/game/ecs/components/physics.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/player.ts#Dead",
+   "name": "Dead",
+   "kind": "component",
+   "file": "src/game/ecs/components/player.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/player.ts#Player",
+   "name": "Player",
+   "kind": "component",
+   "file": "src/game/ecs/components/player.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/player.ts#ViewRig",
+   "name": "ViewRig",
+   "kind": "component",
+   "file": "src/game/ecs/components/player.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/transform.ts#Position",
+   "name": "Position",
+   "kind": "component",
+   "file": "src/game/ecs/components/transform.ts",
+   "line": 3,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/transform.ts#Rotation",
+   "name": "Rotation",
+   "kind": "component",
+   "file": "src/game/ecs/components/transform.ts",
+   "line": 7,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/components/transform.ts#Velocity",
+   "name": "Velocity",
+   "kind": "component",
+   "file": "src/game/ecs/components/transform.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/defineQuery.ts#defineQuery",
+   "name": "defineQuery",
+   "kind": "query",
+   "file": "src/game/ecs/defineQuery.ts",
+   "line": 6,
+   "lines": 12,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/core/cleanupSystem.ts#destroyedQuery",
+     "name": "destroyedQuery",
+     "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+     "line": 6
+    },
+    {
+     "unit": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeQuery",
+     "name": "lifetimeQuery",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 5
+    },
+    {
+     "unit": "src/game/ecs/systems/core/spatialSystem.ts#shootableQuery",
+     "name": "shootableQuery",
+     "file": "src/game/ecs/systems/core/spatialSystem.ts",
+     "line": 5
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#livingPlayerQuery",
+     "name": "livingPlayerQuery",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 8
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#deadPlayerQuery",
+     "name": "deadPlayerQuery",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 9
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/events.ts#clearFrameEvents",
+   "name": "clearFrameEvents",
+   "kind": "rule",
+   "file": "src/game/ecs/events.ts",
+   "line": 49,
+   "lines": 14,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/world.ts#beginFrame",
+     "name": "beginFrame",
+     "file": "src/game/ecs/world.ts",
+     "line": 51
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/events.ts#createFrameEvents",
+   "name": "createFrameEvents",
+   "kind": "rule",
+   "file": "src/game/ecs/events.ts",
+   "line": 45,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/world.ts#createGameWorld",
+     "name": "createGameWorld",
+     "file": "src/game/ecs/world.ts",
+     "line": 40
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem",
+   "name": "cleanupSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+   "line": 8,
+   "lines": 7,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 11
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/cleanupSystem.ts#destroyedQuery",
+   "name": "destroyedQuery",
+   "kind": "query",
+   "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+   "line": 6,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem",
+     "name": "cleanupSystem",
+     "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+     "line": 9
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/clockSystem.ts#clockSystem",
+   "name": "clockSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/clockSystem.ts",
+   "line": 3,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 8
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeQuery",
+   "name": "lifetimeQuery",
+   "kind": "query",
+   "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem",
+     "name": "lifetimeSystem",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 8
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem",
+   "name": "lifetimeSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+   "line": 7,
+   "lines": 6,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 10
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/world.ts#destroyEntity",
+     "name": "destroyEntity",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 10
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/core/spatialSystem.ts#shootableQuery",
+   "name": "shootableQuery",
+   "kind": "query",
+   "file": "src/game/ecs/systems/core/spatialSystem.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem",
+     "name": "spatialSystem",
+     "file": "src/game/ecs/systems/core/spatialSystem.ts",
+     "line": 9
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem",
+   "name": "spatialSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/core/spatialSystem.ts",
+   "line": 7,
+   "lines": 4,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 8
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#pipeline",
+   "name": "pipeline",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 14,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#runSystems",
+     "name": "runSystems",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 19
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 14
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#runSystems",
+   "name": "runSystems",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 18,
+   "lines": 3,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 61
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#trainingPipeline",
+     "name": "trainingPipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 19
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#pipeline",
+     "name": "pipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 19
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#runView",
+   "name": "runView",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 22,
+   "lines": 3,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 64
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#viewPipeline",
+     "name": "viewPipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 23
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#simulation",
+   "name": "simulation",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 7,
+   "lines": 6,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#pipeline",
+     "name": "pipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 14
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#trainingPipeline",
+     "name": "trainingPipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 16
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/core/clockSystem.ts#clockSystem",
+     "name": "clockSystem",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 8
+    },
+    {
+     "unit": "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem",
+     "name": "spatialSystem",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 8
+    },
+    {
+     "unit": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem",
+     "name": "lifetimeSystem",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 10
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#viewPipeline",
+     "name": "viewPipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 11
+    },
+    {
+     "unit": "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem",
+     "name": "cleanupSystem",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 11
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#trainingPipeline",
+   "name": "trainingPipeline",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 16,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#runSystems",
+     "name": "runSystems",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 19
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 16
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/index.ts#viewPipeline",
+   "name": "viewPipeline",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/index.ts",
+   "line": 5,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#simulation",
+     "name": "simulation",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 11
+    },
+    {
+     "unit": "src/game/ecs/systems/index.ts#runView",
+     "name": "runView",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 23
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 5
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/schedule.ts#every",
+   "name": "every",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/schedule.ts",
+   "line": 3,
+   "lines": 8,
+   "complexity": 4,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/schedule.ts#runNextFrame",
+   "name": "runNextFrame",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/schedule.ts",
+   "line": 12,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES",
+   "name": "PLAYER_STATES",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 10,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 40
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+   "name": "cameraSystem",
+   "kind": "system",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 38,
+   "lines": 16,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/index.ts#viewPipeline",
+     "name": "viewPipeline",
+     "file": "src/game/ecs/systems/index.ts",
+     "line": 5
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#followHeight",
+     "name": "followHeight",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 42
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight",
+     "name": "eyeHeight",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 43
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#shakeOffset",
+     "name": "shakeOffset",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#updateShake",
+     "name": "updateShake",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    },
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES",
+     "name": "PLAYER_STATES",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 40
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#deadPlayerQuery",
+   "name": "deadPlayerQuery",
+   "kind": "query",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 9,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES",
+     "name": "PLAYER_STATES",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 10
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight",
+   "name": "eyeHeight",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 16,
+   "lines": 6,
+   "complexity": 2,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 43
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#followHeight",
+   "name": "followHeight",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 12,
+   "lines": 3,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 42
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#livingPlayerQuery",
+   "name": "livingPlayerQuery",
+   "kind": "query",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 8,
+   "lines": 1,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES",
+     "name": "PLAYER_STATES",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 10
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#shakeOffset",
+   "name": "shakeOffset",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 29,
+   "lines": 8,
+   "complexity": 1,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/systems/view/cameraSystem.ts#updateShake",
+   "name": "updateShake",
+   "kind": "rule",
+   "file": "src/game/ecs/systems/view/cameraSystem.ts",
+   "line": 23,
+   "lines": 5,
+   "complexity": 2,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem",
+     "name": "cameraSystem",
+     "file": "src/game/ecs/systems/view/cameraSystem.ts",
+     "line": 44
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/ecs/world.ts#beginFrame",
+   "name": "beginFrame",
+   "kind": "rule",
+   "file": "src/game/ecs/world.ts",
+   "line": 48,
+   "lines": 5,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 60
+    },
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 63
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/events.ts#clearFrameEvents",
+     "name": "clearFrameEvents",
+     "file": "src/game/ecs/world.ts",
+     "line": 51
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/world.ts#createGameWorld",
+   "name": "createGameWorld",
+   "kind": "rule",
+   "file": "src/game/ecs/world.ts",
+   "line": 34,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/session.ts#createRun",
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 17
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/ecs/events.ts#createFrameEvents",
+     "name": "createFrameEvents",
+     "file": "src/game/ecs/world.ts",
+     "line": 40
+    }
+   ]
+  },
+  {
+   "id": "src/game/ecs/world.ts#destroyEntity",
+   "name": "destroyEntity",
+   "kind": "rule",
+   "file": "src/game/ecs/world.ts",
+   "line": 54,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem",
+     "name": "lifetimeSystem",
+     "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+     "line": 10
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/math/angle.ts#wrapAngle",
+   "name": "wrapAngle",
+   "kind": "rule",
+   "file": "src/game/math/angle.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/game/math/random.ts#mulberry32",
+   "name": "mulberry32",
+   "kind": "rule",
+   "file": "src/game/math/random.ts",
+   "line": 3,
+   "lines": 10,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/session.ts#createRun",
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 20
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/physics/spatialHash.ts#createSpatialHash",
+   "name": "createSpatialHash",
+   "kind": "rule",
+   "file": "src/game/physics/spatialHash.ts",
+   "line": 9,
+   "lines": 28,
+   "complexity": 8,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/session.ts#createRun",
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 21
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/game/progression/save.ts#createEmptySave",
+   "name": "createEmptySave",
+   "kind": "rule",
+   "file": "src/game/progression/save.ts",
+   "line": 10,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/storage/saveStorage.ts#loadSave",
+     "name": "loadSave",
+     "file": "src/platform/storage/saveStorage.ts",
+     "line": 6
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/index.ts#loadAssets",
+   "name": "loadAssets",
+   "kind": "outside",
+   "file": "src/platform/assets/index.ts",
+   "line": 9,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/App.tsx#App",
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 14
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/sprites.ts#loadSprites",
+     "name": "loadSprites",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    },
+    {
+     "unit": "src/platform/assets/textures.ts#loadTextures",
+     "name": "loadTextures",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#loadUiImages",
+     "name": "loadUiImages",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/loaders.ts#loadImage",
+   "name": "loadImage",
+   "kind": "outside",
+   "file": "src/platform/assets/loaders.ts",
+   "line": 3,
+   "lines": 8,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/sheets.ts#loadSheet",
+     "name": "loadSheet",
+     "file": "src/platform/assets/sheets.ts",
+     "line": 25
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/loaders.ts#loadJson",
+   "name": "loadJson",
+   "kind": "outside",
+   "file": "src/platform/assets/loaders.ts",
+   "line": 12,
+   "lines": 5,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/sheets.ts#loadSheet",
+     "name": "loadSheet",
+     "file": "src/platform/assets/sheets.ts",
+     "line": 23
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#loadSprites",
+     "name": "loadSprites",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 46
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/loaders.ts#pixelated",
+   "name": "pixelated",
+   "kind": "outside",
+   "file": "src/platform/assets/loaders.ts",
+   "line": 18,
+   "lines": 7,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/sprites.ts#loadSprites",
+     "name": "loadSprites",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 73
+    },
+    {
+     "unit": "src/platform/assets/textures.ts#loadBiome",
+     "name": "loadBiome",
+     "file": "src/platform/assets/textures.ts",
+     "line": 20
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/sheets.ts#cropFrame",
+   "name": "cropFrame",
+   "kind": "outside",
+   "file": "src/platform/assets/sheets.ts",
+   "line": 28,
+   "lines": 9,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/textures.ts#loadBiome",
+     "name": "loadBiome",
+     "file": "src/platform/assets/textures.ts",
+     "line": 20
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameCanvas",
+     "name": "frameCanvas",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 24
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/sheets.ts#loadSheet",
+   "name": "loadSheet",
+   "kind": "outside",
+   "file": "src/platform/assets/sheets.ts",
+   "line": 22,
+   "lines": 5,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/sprites.ts#loadSprites",
+     "name": "loadSprites",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 47
+    },
+    {
+     "unit": "src/platform/assets/textures.ts#loadBiome",
+     "name": "loadBiome",
+     "file": "src/platform/assets/textures.ts",
+     "line": 17
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#loadUiImages",
+     "name": "loadUiImages",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 60
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/loaders.ts#loadJson",
+     "name": "loadJson",
+     "file": "src/platform/assets/sheets.ts",
+     "line": 23
+    },
+    {
+     "unit": "src/platform/assets/loaders.ts#loadImage",
+     "name": "loadImage",
+     "file": "src/platform/assets/sheets.ts",
+     "line": 25
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/sprites.ts#getSprite",
+   "name": "getSprite",
+   "kind": "outside",
+   "file": "src/platform/assets/sprites.ts",
+   "line": 24,
+   "lines": 1,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/scene/spriteBatch.ts#createSpriteBatch",
+     "name": "createSpriteBatch",
+     "file": "src/platform/render/scene/spriteBatch.ts",
+     "line": 66
+    },
+    {
+     "unit": "src/platform/render/scene/viewModel.ts#createViewModel",
+     "name": "createViewModel",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 16
+    },
+    {
+     "unit": "src/platform/render/scene/viewModel.ts#createViewModel",
+     "name": "createViewModel",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 27
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/sprites.ts#getSpriteAtlas",
+   "name": "getSpriteAtlas",
+   "kind": "outside",
+   "file": "src/platform/assets/sprites.ts",
+   "line": 26,
+   "lines": 4,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/scene/spriteBatch.ts#createSpriteBatch",
+     "name": "createSpriteBatch",
+     "file": "src/platform/render/scene/spriteBatch.ts",
+     "line": 42
+    },
+    {
+     "unit": "src/platform/render/scene/viewModel.ts#createViewModel",
+     "name": "createViewModel",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 17
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/sprites.ts#hasSprite",
+   "name": "hasSprite",
+   "kind": "outside",
+   "file": "src/platform/assets/sprites.ts",
+   "line": 23,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/sprites.ts#loadSprites",
+   "name": "loadSprites",
+   "kind": "outside",
+   "file": "src/platform/assets/sprites.ts",
+   "line": 45,
+   "lines": 30,
+   "complexity": 8,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/index.ts#loadAssets",
+     "name": "loadAssets",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/loaders.ts#loadJson",
+     "name": "loadJson",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 46
+    },
+    {
+     "unit": "src/platform/assets/sheets.ts#loadSheet",
+     "name": "loadSheet",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 47
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#addFrame",
+     "name": "addFrame",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 54
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#addFrame",
+     "name": "addFrame",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 68
+    },
+    {
+     "unit": "src/platform/assets/loaders.ts#pixelated",
+     "name": "pixelated",
+     "file": "src/platform/assets/sprites.ts",
+     "line": 73
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/textures.ts#getTexture",
+   "name": "getTexture",
+   "kind": "outside",
+   "file": "src/platform/assets/textures.ts",
+   "line": 10,
+   "lines": 5,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/platform/assets/textures.ts#loadTextures",
+   "name": "loadTextures",
+   "kind": "outside",
+   "file": "src/platform/assets/textures.ts",
+   "line": 26,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/index.ts#loadAssets",
+     "name": "loadAssets",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/textures.ts#loadBiome",
+     "name": "loadBiome",
+     "file": "src/platform/assets/textures.ts",
+     "line": 27
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#coinUrl",
+   "name": "coinUrl",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 50,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/Icon.tsx#CoinAmount",
+     "name": "CoinAmount",
+     "file": "src/ui/Icon.tsx",
+     "line": 13
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameUrl",
+     "name": "frameUrl",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 51
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#getIconImage",
+   "name": "getIconImage",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 54,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/statusProcs.ts#createStatusProcs",
+     "name": "createStatusProcs",
+     "file": "src/platform/render/overlay/statusProcs.ts",
+     "line": 45
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameCanvas",
+     "name": "frameCanvas",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 55
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#heroUrl",
+   "name": "heroUrl",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 46,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 30
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameUrl",
+     "name": "frameUrl",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 47
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#iconUrl",
+   "name": "iconUrl",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 38,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/Icon.tsx#Icon",
+     "name": "Icon",
+     "file": "src/ui/Icon.tsx",
+     "line": 6
+    },
+    {
+     "unit": "src/ui/Icon.tsx#IconAmount",
+     "name": "IconAmount",
+     "file": "src/ui/Icon.tsx",
+     "line": 17
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameUrl",
+     "name": "frameUrl",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 39
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#keyUrl",
+   "name": "keyUrl",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 42,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/Keys.tsx#Key",
+     "name": "Key",
+     "file": "src/ui/Keys.tsx",
+     "line": 24
+    },
+    {
+     "unit": "src/ui/Keys.tsx#Key",
+     "name": "Key",
+     "file": "src/ui/Keys.tsx",
+     "line": 25
+    },
+    {
+     "unit": "src/ui/Keys.tsx#Key",
+     "name": "Key",
+     "file": "src/ui/Keys.tsx",
+     "line": 29
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#frameUrl",
+     "name": "frameUrl",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 43
+    }
+   ]
+  },
+  {
+   "id": "src/platform/assets/uiImages.ts#loadUiImages",
+   "name": "loadUiImages",
+   "kind": "outside",
+   "file": "src/platform/assets/uiImages.ts",
+   "line": 58,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/assets/index.ts#loadAssets",
+     "name": "loadAssets",
+     "file": "src/platform/assets/index.ts",
+     "line": 10
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/sheets.ts#loadSheet",
+     "name": "loadSheet",
+     "file": "src/platform/assets/uiImages.ts",
+     "line": 60
+    }
+   ]
+  },
+  {
+   "id": "src/platform/device.ts#isMobile",
+   "name": "isMobile",
+   "kind": "outside",
+   "file": "src/platform/device.ts",
+   "line": 1,
+   "lines": 2,
+   "complexity": 4,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 29
+    },
+    {
+     "unit": "src/ui/Keys.tsx#Controls",
+     "name": "Controls",
+     "file": "src/ui/Keys.tsx",
+     "line": 33
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/input/joystick.ts#createJoystick",
+   "name": "createJoystick",
+   "kind": "outside",
+   "file": "src/platform/input/joystick.ts",
+   "line": 16,
+   "lines": 67,
+   "complexity": 5,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/input/touchInput.ts#createTouchInput",
+     "name": "createTouchInput",
+     "file": "src/platform/input/touchInput.ts",
+     "line": 9
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/input/keyboardMouseInput.ts#createKeyboardMouseInput",
+   "name": "createKeyboardMouseInput",
+   "kind": "outside",
+   "file": "src/platform/input/keyboardMouseInput.ts",
+   "line": 4,
+   "lines": 82,
+   "complexity": 14,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 29
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/input/touchInput.ts#createTouchInput",
+   "name": "createTouchInput",
+   "kind": "outside",
+   "file": "src/platform/input/touchInput.ts",
+   "line": 7,
+   "lines": 84,
+   "complexity": 12,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 29
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/input/joystick.ts#createJoystick",
+     "name": "createJoystick",
+     "file": "src/platform/input/touchInput.ts",
+     "line": 9
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/RenderContext.ts#createRenderContext",
+   "name": "createRenderContext",
+   "kind": "outside",
+   "file": "src/platform/render/RenderContext.ts",
+   "line": 17,
+   "lines": 70,
+   "complexity": 4,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 28
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/RenderContext.ts",
+     "line": 33
+    },
+    {
+     "unit": "src/platform/render/scene/spriteBatch.ts#createSpriteBatch",
+     "name": "createSpriteBatch",
+     "file": "src/platform/render/RenderContext.ts",
+     "line": 34
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/effects/aura.ts#createAura",
+   "name": "createAura",
+   "kind": "outside",
+   "file": "src/platform/render/effects/aura.ts",
+   "line": 7,
+   "lines": 18,
+   "complexity": 4,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/render/effects/instancedEffects.ts#effectMaterial",
+     "name": "effectMaterial",
+     "file": "src/platform/render/effects/aura.ts",
+     "line": 8
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/effects/glows.ts#createGlows",
+   "name": "createGlows",
+   "kind": "outside",
+   "file": "src/platform/render/effects/glows.ts",
+   "line": 10,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/render/effects/instancedEffects.ts#effectMaterial",
+     "name": "effectMaterial",
+     "file": "src/platform/render/effects/glows.ts",
+     "line": 11
+    },
+    {
+     "unit": "src/platform/render/effects/instancedEffects.ts#createInstancedEffects",
+     "name": "createInstancedEffects",
+     "file": "src/platform/render/effects/glows.ts",
+     "line": 12
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/effects/haze.ts#createHaze",
+   "name": "createHaze",
+   "kind": "outside",
+   "file": "src/platform/render/effects/haze.ts",
+   "line": 10,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/render/effects/instancedEffects.ts#effectMaterial",
+     "name": "effectMaterial",
+     "file": "src/platform/render/effects/haze.ts",
+     "line": 11
+    },
+    {
+     "unit": "src/platform/render/effects/instancedEffects.ts#createInstancedEffects",
+     "name": "createInstancedEffects",
+     "file": "src/platform/render/effects/haze.ts",
+     "line": 12
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/effects/instancedEffects.ts#createInstancedEffects",
+   "name": "createInstancedEffects",
+   "kind": "outside",
+   "file": "src/platform/render/effects/instancedEffects.ts",
+   "line": 15,
+   "lines": 22,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/effects/glows.ts#createGlows",
+     "name": "createGlows",
+     "file": "src/platform/render/effects/glows.ts",
+     "line": 12
+    },
+    {
+     "unit": "src/platform/render/effects/haze.ts#createHaze",
+     "name": "createHaze",
+     "file": "src/platform/render/effects/haze.ts",
+     "line": 12
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/effects/instancedEffects.ts#effectMaterial",
+   "name": "effectMaterial",
+   "kind": "outside",
+   "file": "src/platform/render/effects/instancedEffects.ts",
+   "line": 9,
+   "lines": 5,
+   "complexity": 2,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/effects/aura.ts#createAura",
+     "name": "createAura",
+     "file": "src/platform/render/effects/aura.ts",
+     "line": 8
+    },
+    {
+     "unit": "src/platform/render/effects/glows.ts#createGlows",
+     "name": "createGlows",
+     "file": "src/platform/render/effects/glows.ts",
+     "line": 11
+    },
+    {
+     "unit": "src/platform/render/effects/haze.ts#createHaze",
+     "name": "createHaze",
+     "file": "src/platform/render/effects/haze.ts",
+     "line": 11
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/effects/shadows.ts#createShadows",
+   "name": "createShadows",
+   "kind": "outside",
+   "file": "src/platform/render/effects/shadows.ts",
+   "line": 13,
+   "lines": 32,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/overlay/damageNumbers.ts#createDamageNumbers",
+   "name": "createDamageNumbers",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/damageNumbers.ts",
+   "line": 36,
+   "lines": 54,
+   "complexity": 10,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 18
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/render/overlay/screen.ts#toScreen",
+     "name": "toScreen",
+     "file": "src/platform/render/overlay/damageNumbers.ts",
+     "line": 69
+    },
+    {
+     "unit": "src/platform/render/overlay/damageNumbers.ts#numberLook",
+     "name": "numberLook",
+     "file": "src/platform/render/overlay/damageNumbers.ts",
+     "line": 71
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/overlay/hitConfirm.ts#createHitConfirm",
+   "name": "createHitConfirm",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/hitConfirm.ts",
+   "line": 15,
+   "lines": 28,
+   "complexity": 6,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 20
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/overlay/hurtArcs.ts#createHurtArcs",
+   "name": "createHurtArcs",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/hurtArcs.ts",
+   "line": 11,
+   "lines": 28,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 17
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/overlay/indicators.ts#drawIndicators",
+   "name": "drawIndicators",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/indicators.ts",
+   "line": 13,
+   "lines": 25,
+   "complexity": 6,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 29
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/overlay/lightningArcs.ts#createLightningArcs",
+   "name": "createLightningArcs",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/lightningArcs.ts",
+   "line": 29,
+   "lines": 42,
+   "complexity": 11,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 16
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/render/overlay/screen.ts#toScreen",
+     "name": "toScreen",
+     "file": "src/platform/render/overlay/lightningArcs.ts",
+     "line": 45
+    },
+    {
+     "unit": "src/platform/render/overlay/lightningArcs.ts#jaggedPath",
+     "name": "jaggedPath",
+     "file": "src/platform/render/overlay/lightningArcs.ts",
+     "line": 50
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/overlay/overlay.ts#createOverlay",
+   "name": "createOverlay",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/overlay.ts",
+   "line": 14,
+   "lines": 24,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/RenderContext.ts#createRenderContext",
+     "name": "createRenderContext",
+     "file": "src/platform/render/RenderContext.ts",
+     "line": 33
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/render/overlay/lightningArcs.ts#createLightningArcs",
+     "name": "createLightningArcs",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 16
+    },
+    {
+     "unit": "src/platform/render/overlay/hurtArcs.ts#createHurtArcs",
+     "name": "createHurtArcs",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 17
+    },
+    {
+     "unit": "src/platform/render/overlay/damageNumbers.ts#createDamageNumbers",
+     "name": "createDamageNumbers",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 18
+    },
+    {
+     "unit": "src/platform/render/overlay/statusProcs.ts#createStatusProcs",
+     "name": "createStatusProcs",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 19
+    },
+    {
+     "unit": "src/platform/render/overlay/hitConfirm.ts#createHitConfirm",
+     "name": "createHitConfirm",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 20
+    },
+    {
+     "unit": "src/platform/render/overlay/indicators.ts#drawIndicators",
+     "name": "drawIndicators",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 29
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/overlay/screen.ts#toScreen",
+   "name": "toScreen",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/screen.ts",
+   "line": 5,
+   "lines": 5,
+   "complexity": 4,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/damageNumbers.ts#createDamageNumbers",
+     "name": "createDamageNumbers",
+     "file": "src/platform/render/overlay/damageNumbers.ts",
+     "line": 69
+    },
+    {
+     "unit": "src/platform/render/overlay/lightningArcs.ts#createLightningArcs",
+     "name": "createLightningArcs",
+     "file": "src/platform/render/overlay/lightningArcs.ts",
+     "line": 45
+    },
+    {
+     "unit": "src/platform/render/overlay/statusProcs.ts#createStatusProcs",
+     "name": "createStatusProcs",
+     "file": "src/platform/render/overlay/statusProcs.ts",
+     "line": 44
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/platform/render/overlay/statusProcs.ts#createStatusProcs",
+   "name": "createStatusProcs",
+   "kind": "outside",
+   "file": "src/platform/render/overlay/statusProcs.ts",
+   "line": 18,
+   "lines": 40,
+   "complexity": 9,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/overlay/overlay.ts#createOverlay",
+     "name": "createOverlay",
+     "file": "src/platform/render/overlay/overlay.ts",
+     "line": 19
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/render/overlay/screen.ts#toScreen",
+     "name": "toScreen",
+     "file": "src/platform/render/overlay/statusProcs.ts",
+     "line": 44
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#getIconImage",
+     "name": "getIconImage",
+     "file": "src/platform/render/overlay/statusProcs.ts",
+     "line": 45
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/scene/spriteBatch.ts#createSpriteBatch",
+   "name": "createSpriteBatch",
+   "kind": "outside",
+   "file": "src/platform/render/scene/spriteBatch.ts",
+   "line": 17,
+   "lines": 71,
+   "complexity": 6,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/platform/render/RenderContext.ts#createRenderContext",
+     "name": "createRenderContext",
+     "file": "src/platform/render/RenderContext.ts",
+     "line": 34
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/platform/assets/sprites.ts#getSpriteAtlas",
+     "name": "getSpriteAtlas",
+     "file": "src/platform/render/scene/spriteBatch.ts",
+     "line": 42
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#getSprite",
+     "name": "getSprite",
+     "file": "src/platform/render/scene/spriteBatch.ts",
+     "line": 66
+    }
+   ]
+  },
+  {
+   "id": "src/platform/render/scene/viewModel.ts#createViewModel",
+   "name": "createViewModel",
+   "kind": "outside",
+   "file": "src/platform/render/scene/viewModel.ts",
+   "line": 5,
+   "lines": 51,
+   "complexity": 4,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/sprites.ts#getSprite",
+     "name": "getSprite",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 16
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#getSpriteAtlas",
+     "name": "getSpriteAtlas",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 17
+    },
+    {
+     "unit": "src/platform/assets/sprites.ts#getSprite",
+     "name": "getSprite",
+     "file": "src/platform/render/scene/viewModel.ts",
+     "line": 27
+    }
+   ]
+  },
+  {
+   "id": "src/platform/storage/saveStorage.ts#loadSave",
+   "name": "loadSave",
+   "kind": "outside",
+   "file": "src/platform/storage/saveStorage.ts",
+   "line": 5,
+   "lines": 9,
+   "complexity": 3,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 31
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/game/progression/save.ts#createEmptySave",
+     "name": "createEmptySave",
+     "file": "src/platform/storage/saveStorage.ts",
+     "line": 6
+    }
+   ]
+  },
+  {
+   "id": "src/platform/storage/saveStorage.ts#writeSave",
+   "name": "writeSave",
+   "kind": "outside",
+   "file": "src/platform/storage/saveStorage.ts",
+   "line": 15,
+   "lines": 7,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/ui/App.tsx#App",
+   "name": "App",
+   "kind": "outside",
+   "file": "src/ui/App.tsx",
+   "line": 7,
+   "lines": 29,
+   "complexity": 3,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/index.ts#loadAssets",
+     "name": "loadAssets",
+     "file": "src/ui/App.tsx",
+     "line": 14
+    },
+    {
+     "unit": "src/app/game.ts#createGame",
+     "name": "createGame",
+     "file": "src/ui/App.tsx",
+     "line": 16
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Build.tsx#Build",
+   "name": "Build",
+   "kind": "outside",
+   "file": "src/ui/Build.tsx",
+   "line": 16,
+   "lines": 21,
+   "complexity": 3,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/Build.tsx",
+     "line": 17
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/Build.tsx",
+     "line": 18
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/Build.tsx",
+     "line": 19
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/Build.tsx",
+     "line": 20
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/Build.tsx",
+     "line": 21
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Hud.tsx#Hud",
+   "name": "Hud",
+   "kind": "outside",
+   "file": "src/ui/Hud.tsx",
+   "line": 3,
+   "lines": 7,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/ui/Icon.tsx#CoinAmount",
+   "name": "CoinAmount",
+   "kind": "outside",
+   "file": "src/ui/Icon.tsx",
+   "line": 12,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#coinUrl",
+     "name": "coinUrl",
+     "file": "src/ui/Icon.tsx",
+     "line": 13
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Icon.tsx#Icon",
+   "name": "Icon",
+   "kind": "outside",
+   "file": "src/ui/Icon.tsx",
+   "line": 3,
+   "lines": 8,
+   "complexity": 4,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#iconUrl",
+     "name": "iconUrl",
+     "file": "src/ui/Icon.tsx",
+     "line": 6
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Icon.tsx#IconAmount",
+   "name": "IconAmount",
+   "kind": "outside",
+   "file": "src/ui/Icon.tsx",
+   "line": 16,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#iconUrl",
+     "name": "iconUrl",
+     "file": "src/ui/Icon.tsx",
+     "line": 17
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Icon.tsx#Pips",
+   "name": "Pips",
+   "kind": "outside",
+   "file": "src/ui/Icon.tsx",
+   "line": 20,
+   "lines": 3,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/ui/Keys.tsx#Controls",
+   "name": "Controls",
+   "kind": "outside",
+   "file": "src/ui/Keys.tsx",
+   "line": 32,
+   "lines": 19,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/device.ts#isMobile",
+     "name": "isMobile",
+     "file": "src/ui/Keys.tsx",
+     "line": 33
+    }
+   ]
+  },
+  {
+   "id": "src/ui/Keys.tsx#Key",
+   "name": "Key",
+   "kind": "outside",
+   "file": "src/ui/Keys.tsx",
+   "line": 20,
+   "lines": 11,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/platform/assets/uiImages.ts#keyUrl",
+     "name": "keyUrl",
+     "file": "src/ui/Keys.tsx",
+     "line": 24
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#keyUrl",
+     "name": "keyUrl",
+     "file": "src/ui/Keys.tsx",
+     "line": 25
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#keyUrl",
+     "name": "keyUrl",
+     "file": "src/ui/Keys.tsx",
+     "line": 29
+    }
+   ]
+  },
+  {
+   "id": "src/ui/PhaseScreens.tsx#PhaseScreen",
+   "name": "PhaseScreen",
+   "kind": "outside",
+   "file": "src/ui/PhaseScreens.tsx",
+   "line": 17,
+   "lines": 16,
+   "complexity": 3,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useCommands",
+     "name": "useCommands",
+     "file": "src/ui/PhaseScreens.tsx",
+     "line": 18
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/PhaseScreens.tsx",
+     "line": 19
+    }
+   ]
+  },
+  {
+   "id": "src/ui/clock.ts#clock",
+   "name": "clock",
+   "kind": "outside",
+   "file": "src/ui/clock.ts",
+   "line": 1,
+   "lines": 1,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#TopCenter",
+     "name": "TopCenter",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 22
+    }
+   ],
+   "calls": []
+  },
+  {
+   "id": "src/ui/gameBridge.tsx#GameBridgeProvider",
+   "name": "GameBridgeProvider",
+   "kind": "outside",
+   "file": "src/ui/gameBridge.tsx",
+   "line": 7,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/ui/gameBridge.tsx#useCommands",
+   "name": "useCommands",
+   "kind": "outside",
+   "file": "src/ui/gameBridge.tsx",
+   "line": 22,
+   "lines": 3,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/PhaseScreens.tsx#Menu",
+     "name": "Menu",
+     "file": "src/ui/PhaseScreens.tsx",
+     "line": 5
+    },
+    {
+     "unit": "src/ui/PhaseScreens.tsx#PhaseScreen",
+     "name": "PhaseScreen",
+     "file": "src/ui/PhaseScreens.tsx",
+     "line": 18
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useGame",
+     "name": "useGame",
+     "file": "src/ui/gameBridge.tsx",
+     "line": 23
+    }
+   ]
+  },
+  {
+   "id": "src/ui/gameBridge.tsx#useHud",
+   "name": "useHud",
+   "kind": "outside",
+   "file": "src/ui/gameBridge.tsx",
+   "line": 17,
+   "lines": 4,
+   "complexity": 1,
+   "exported": true,
+   "callers": [
+    {
+     "unit": "src/ui/PhaseScreens.tsx#PhaseScreen",
+     "name": "PhaseScreen",
+     "file": "src/ui/PhaseScreens.tsx",
+     "line": 19
+    },
+    {
+     "unit": "src/ui/Build.tsx#Build",
+     "name": "Build",
+     "file": "src/ui/Build.tsx",
+     "line": 17
+    },
+    {
+     "unit": "src/ui/Build.tsx#Build",
+     "name": "Build",
+     "file": "src/ui/Build.tsx",
+     "line": 18
+    },
+    {
+     "unit": "src/ui/Build.tsx#Build",
+     "name": "Build",
+     "file": "src/ui/Build.tsx",
+     "line": 19
+    },
+    {
+     "unit": "src/ui/Build.tsx#Build",
+     "name": "Build",
+     "file": "src/ui/Build.tsx",
+     "line": 20
+    },
+    {
+     "unit": "src/ui/Build.tsx#Build",
+     "name": "Build",
+     "file": "src/ui/Build.tsx",
+     "line": 21
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#WeaponSlot",
+     "name": "WeaponSlot",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 17
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#WeaponSlot",
+     "name": "WeaponSlot",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 18
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#WeaponSlot",
+     "name": "WeaponSlot",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 19
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#Xp",
+     "name": "Xp",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 32
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#Xp",
+     "name": "Xp",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 33
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#Xp",
+     "name": "Xp",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 34
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#Xp",
+     "name": "Xp",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 35
+    },
+    {
+     "unit": "src/ui/hud/Bottom.tsx#Skills",
+     "name": "Skills",
+     "file": "src/ui/hud/Bottom.tsx",
+     "line": 48
+    },
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#TopCenter",
+     "name": "TopCenter",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 14
+    },
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#TopCenter",
+     "name": "TopCenter",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 15
+    },
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#TopCenter",
+     "name": "TopCenter",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 16
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 20
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 21
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 22
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 23
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 24
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 25
+    },
+    {
+     "unit": "src/ui/hud/TopLeft.tsx#TopLeft",
+     "name": "TopLeft",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 26
+    },
+    {
+     "unit": "src/ui/hud/TopRight.tsx#TopRight",
+     "name": "TopRight",
+     "file": "src/ui/hud/TopRight.tsx",
+     "line": 6
+    },
+    {
+     "unit": "src/ui/hud/TopRight.tsx#TopRight",
+     "name": "TopRight",
+     "file": "src/ui/hud/TopRight.tsx",
+     "line": 7
+    }
+   ],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useGame",
+     "name": "useGame",
+     "file": "src/ui/gameBridge.tsx",
+     "line": 18
+    }
+   ]
+  },
+  {
+   "id": "src/ui/hud/Bottom.tsx#Bottom",
+   "name": "Bottom",
+   "kind": "outside",
+   "file": "src/ui/hud/Bottom.tsx",
+   "line": 57,
+   "lines": 9,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": []
+  },
+  {
+   "id": "src/ui/hud/TopCenter.tsx#TopCenter",
+   "name": "TopCenter",
+   "kind": "outside",
+   "file": "src/ui/hud/TopCenter.tsx",
+   "line": 13,
+   "lines": 24,
+   "complexity": 6,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 14
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 15
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 16
+    },
+    {
+     "unit": "src/ui/clock.ts#clock",
+     "name": "clock",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 22
+    },
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#percent",
+     "name": "percent",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 26
+    },
+    {
+     "unit": "src/ui/hud/TopCenter.tsx#percent",
+     "name": "percent",
+     "file": "src/ui/hud/TopCenter.tsx",
+     "line": 28
+    }
+   ]
+  },
+  {
+   "id": "src/ui/hud/TopLeft.tsx#TopLeft",
+   "name": "TopLeft",
+   "kind": "outside",
+   "file": "src/ui/hud/TopLeft.tsx",
+   "line": 19,
+   "lines": 24,
+   "complexity": 2,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 20
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 21
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 22
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 23
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 24
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 25
+    },
+    {
+     "unit": "src/game/config/heroes.ts#heroById",
+     "name": "heroById",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 26
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 26
+    },
+    {
+     "unit": "src/platform/assets/uiImages.ts#heroUrl",
+     "name": "heroUrl",
+     "file": "src/ui/hud/TopLeft.tsx",
+     "line": 30
+    }
+   ]
+  },
+  {
+   "id": "src/ui/hud/TopRight.tsx#TopRight",
+   "name": "TopRight",
+   "kind": "outside",
+   "file": "src/ui/hud/TopRight.tsx",
+   "line": 5,
+   "lines": 10,
+   "complexity": 1,
+   "exported": true,
+   "callers": [],
+   "calls": [
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopRight.tsx",
+     "line": 6
+    },
+    {
+     "unit": "src/ui/gameBridge.tsx#useHud",
+     "name": "useHud",
+     "file": "src/ui/hud/TopRight.tsx",
+     "line": 7
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "lifetimeSystem",
+   "to": "cleanupSystem",
+   "via": "component:Destroyed",
+   "kind": "tag",
+   "hub": false,
+   "nextFrame": false
+  }
+ ],
+ "findings": [
+  {
+   "kind": "write-only",
+   "system": "cleanupSystem",
+   "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+   "line": 11,
+   "text": "writes Faction.side, but nothing reads this field"
+  },
+  {
+   "kind": "write-only",
+   "system": "cleanupSystem",
+   "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+   "line": 10,
+   "text": "writes Health.hp, but nothing reads this field"
+  }
+ ],
+ "tests": [
+  {
+   "title": "has every sprite frame the game asks for",
+   "file": "tests/core/assets.test.ts",
+   "line": 51,
+   "symbols": [
+    "src/game/config/effects.ts#EFFECTS",
+    "src/game/config/elements.ts#ELEMENTS",
+    "src/game/config/enemies.ts#ENEMIES",
+    "src/game/config/loot.ts#PICKUP_VIEW",
+    "src/game/config/skills.ts#SKILL_TUNING",
+    "src/game/config/weapons.ts#WEAPONS"
+   ],
+   "simulates": false
+  },
+  {
+   "title": "has every UI image in its sheet",
+   "file": "tests/core/assets.test.ts",
+   "line": 63,
+   "symbols": [
+    "src/game/config/heroes.ts#HEROES",
+    "src/game/config/icons.ts#GOLD_ICON",
+    "src/game/config/icons.ts#KILLS_ICON",
+    "src/game/config/icons.ts#TIME_ICON",
+    "src/game/config/icons.ts#skillIcon",
+    "src/game/config/meta.ts#META",
+    "src/game/config/passives.ts#PASSIVES",
+    "src/game/config/skills.ts#SKILLS",
+    "src/game/config/status.ts#FROZEN_ICON",
+    "src/game/config/status.ts#STATUS",
+    "src/game/config/weapons.ts#WEAPONS"
+   ],
+   "simulates": false
+  },
+  {
+   "title": "has every biome tile in its biome sheet",
+   "file": "tests/core/assets.test.ts",
+   "line": 78,
+   "symbols": [
+    "src/game/config/biomes.ts#BIOMES",
+    "src/game/config/biomes.ts#BIOME_TILES",
+    "src/game/config/biomes.ts#biomeTexture"
+   ],
+   "simulates": false
+  },
+  {
+   "title": "follows added and removed components with the same result array",
+   "file": "tests/core/defineQuery.test.ts",
+   "line": 11,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "keeps worlds apart",
+   "file": "tests/core/defineQuery.test.ts",
+   "line": 22,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "describes every source folder",
+   "file": "tests/core/readme.test.ts",
+   "line": 19,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "%s declares every tunable from the config",
+   "file": "tests/core/shaders.test.ts",
+   "line": 11,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "has no classes and no this",
+   "file": "tests/core/style.test.ts",
+   "line": 19,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "has no default exports",
+   "file": "tests/core/style.test.ts",
+   "line": 23,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "keeps one system per file, named after the file",
+   "file": "tests/core/style.test.ts",
+   "line": 27,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "declares queries at the top of the module, never inside functions",
+   "file": "tests/core/style.test.ts",
+   "line": 38,
+   "symbols": [],
+   "simulates": false
+  },
+  {
+   "title": "keeps the game free of the browser, three.js and React",
+   "file": "tests/core/style.test.ts",
+   "line": 42,
+   "symbols": [],
+   "simulates": false
+  }
+ ],
+ "impacts": {
+  "src/game/ecs/components/health.ts#Faction": {
+   "executing": [],
+   "readers": [],
+   "writers": [
+    {
+     "name": "cleanupSystem",
+     "accesses": [
+      {
+       "value": "Faction.side",
+       "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+       "line": 11
+      }
+     ]
+    }
+   ],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Faction"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/health.ts#Health": {
+   "executing": [],
+   "readers": [],
+   "writers": [
+    {
+     "name": "cleanupSystem",
+     "accesses": [
+      {
+       "value": "Health.hp",
+       "file": "src/game/ecs/systems/core/cleanupSystem.ts",
+       "line": 10
+      }
+     ]
+    }
+   ],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Health"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/health.ts#Side": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Side"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/lifetime.ts#Destroyed": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cleanupSystem",
+     "through": [
+      "Destroyed"
+     ]
+    }
+   ],
+   "writers": [
+    {
+     "name": "lifetimeSystem",
+     "accesses": [
+      {
+       "value": "+Destroyed",
+       "file": "src/game/ecs/world.ts",
+       "line": 55
+      }
+     ]
+    }
+   ],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Destroyed"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/lifetime.ts#Lifetime": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "lifetimeSystem",
+     "through": [
+      "Lifetime"
+     ]
+    }
+   ],
+   "writers": [
+    {
+     "name": "lifetimeSystem",
+     "accesses": [
+      {
+       "value": "Lifetime.left",
+       "file": "src/game/ecs/systems/core/lifetimeSystem.ts",
+       "line": 9
+      }
+     ]
+    }
+   ],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Lifetime"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/physics.ts#Body": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "spatialSystem",
+     "through": [
+      "Body"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Body"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/physics.ts#Shootable": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "spatialSystem",
+     "through": [
+      "Shootable"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Shootable"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/player.ts#Dead": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "Dead"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Dead"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/player.ts#Player": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "Player"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Player"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/player.ts#ViewRig": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "ViewRig"
+     ]
+    }
+   ],
+   "writers": [
+    {
+     "name": "cameraSystem",
+     "accesses": [
+      {
+       "value": "ViewRig.height",
+       "file": "src/game/ecs/systems/view/cameraSystem.ts",
+       "line": 13
+      },
+      {
+       "value": "ViewRig.bob",
+       "file": "src/game/ecs/systems/view/cameraSystem.ts",
+       "line": 18
+      },
+      {
+       "value": "ViewRig.shake",
+       "file": "src/game/ecs/systems/view/cameraSystem.ts",
+       "line": 24
+      },
+      {
+       "value": "ViewRig.shake",
+       "file": "src/game/ecs/systems/view/cameraSystem.ts",
+       "line": 25
+      }
+     ]
+    }
+   ],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "ViewRig"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/transform.ts#Position": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "spatialSystem",
+     "through": [
+      "Position"
+     ]
+    },
+    {
+     "name": "cameraSystem",
+     "through": [
+      "Position"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Position"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/transform.ts#Rotation": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "Rotation"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Rotation"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/components/transform.ts#Velocity": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "Velocity"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Velocity"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/events.ts#clearFrameEvents": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "events.impact"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [
+    "confirmed",
+    "crits",
+    "hurt",
+    "pickup",
+    "aura",
+    "impact"
+   ],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 3
+  },
+  "src/game/ecs/events.ts#createFrameEvents": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 16
+    },
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 4
+  },
+  "src/game/ecs/systems/core/cleanupSystem.ts#cleanupSystem": {
+   "executing": [
+    "cleanupSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "Health.hp",
+    "Faction.side"
+   ],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/core/clockSystem.ts#clockSystem": {
+   "executing": [
+    "clockSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/core/lifetimeSystem.ts#lifetimeSystem": {
+   "executing": [
+    "lifetimeSystem"
+   ],
+   "readers": [
+    {
+     "name": "cleanupSystem",
+     "through": [
+      "Destroyed"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "Lifetime.left"
+   ],
+   "writesTags": [
+    "Destroyed"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/core/spatialSystem.ts#spatialSystem": {
+   "executing": [
+    "spatialSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/index.ts#pipeline": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/index.ts#runSystems": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 2
+  },
+  "src/game/ecs/systems/index.ts#runView": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 2
+  },
+  "src/game/ecs/systems/index.ts#simulation": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 2
+  },
+  "src/game/ecs/systems/index.ts#trainingPipeline": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/index.ts#viewPipeline": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 2
+  },
+  "src/game/ecs/systems/schedule.ts#every": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/systems/schedule.ts#runNextFrame": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#PLAYER_STATES": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#cameraSystem": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "ViewRig.height",
+    "ViewRig.bob",
+    "ViewRig.shake"
+   ],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#eyeHeight": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "ViewRig.bob"
+   ],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#followHeight": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "ViewRig.height"
+   ],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#shakeOffset": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/systems/view/cameraSystem.ts#updateShake": {
+   "executing": [
+    "cameraSystem"
+   ],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [
+    "ViewRig.shake"
+   ],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/ecs/world.ts#beginFrame": {
+   "executing": [],
+   "readers": [
+    {
+     "name": "cameraSystem",
+     "through": [
+      "events.impact"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [
+    "confirmed",
+    "crits",
+    "hurt",
+    "pickup",
+    "aura",
+    "impact"
+   ],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 2
+  },
+  "src/game/ecs/world.ts#createGameWorld": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 16
+    },
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 3
+  },
+  "src/game/ecs/world.ts#destroyEntity": {
+   "executing": [
+    "lifetimeSystem"
+   ],
+   "readers": [
+    {
+     "name": "cleanupSystem",
+     "through": [
+      "Destroyed"
+     ]
+    }
+   ],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [
+    "Destroyed"
+   ],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 1
+  },
+  "src/game/math/angle.ts#wrapAngle": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 0
+  },
+  "src/game/math/random.ts#mulberry32": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 16
+    },
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 3
+  },
+  "src/game/physics/spatialHash.ts#createSpatialHash": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "createRun",
+     "file": "src/app/session.ts",
+     "line": 16
+    },
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 3
+  },
+  "src/game/progression/save.ts#createEmptySave": {
+   "executing": [],
+   "readers": [],
+   "writers": [],
+   "contracts": [
+    {
+     "name": "loadSave",
+     "file": "src/platform/storage/saveStorage.ts",
+     "line": 5
+    },
+    {
+     "name": "createGame",
+     "file": "src/app/game.ts",
+     "line": 26
+    },
+    {
+     "name": "App",
+     "file": "src/ui/App.tsx",
+     "line": 7
+    }
+   ],
+   "writesFields": [],
+   "writesTags": [],
+   "emits": [],
+   "tests": [],
+   "simulationTests": 0,
+   "transitive": 3
+  }
+ }
+}

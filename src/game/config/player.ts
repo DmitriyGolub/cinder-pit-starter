@@ -1,0 +1,14 @@
+export const PLAYER = {
+  radius: 0.25,
+  height: 0.75,
+  eye: 0.58,
+  speed: 4.4,
+  walkFactor: 0.5,
+  acceleration: 14,
+  turnSpeed: 2.8,
+  healthMax: 100,
+  pickupRange: 0.6,
+  magnet: 2.2,
+  invulnerabilityTime: 0.35,
+  deadFriction: 0.85,
+}

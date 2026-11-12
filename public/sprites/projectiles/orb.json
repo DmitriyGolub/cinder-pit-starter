@@ -1,0 +1,69 @@
+{
+ "image": "orb.png",
+ "frames": {
+  "orb_front0": {
+   "x": 75,
+   "y": 0,
+   "width": 16,
+   "height": 16,
+   "originX": 8,
+   "originY": 8
+  },
+  "orb_front1": {
+   "x": 56,
+   "y": 0,
+   "width": 18,
+   "height": 17,
+   "originX": 9,
+   "originY": 8
+  },
+  "orb_side0": {
+   "x": 140,
+   "y": 0,
+   "width": 30,
+   "height": 14,
+   "originX": 15,
+   "originY": 7
+  },
+  "orb_side1": {
+   "x": 92,
+   "y": 0,
+   "width": 30,
+   "height": 16,
+   "originX": 15,
+   "originY": 8
+  },
+  "impact0": {
+   "x": 123,
+   "y": 0,
+   "width": 16,
+   "height": 16,
+   "originX": 8,
+   "originY": 8
+  },
+  "impact1": {
+   "x": 27,
+   "y": 0,
+   "width": 28,
+   "height": 26,
+   "originX": 14,
+   "originY": 13
+  },
+  "impact2": {
+   "x": 0,
+   "y": 0,
+   "width": 26,
+   "height": 28,
+   "originX": 13,
+   "originY": 14
+  },
+  "ember": {
+   "x": 171,
+   "y": 0,
+   "width": 6,
+   "height": 6,
+   "originX": 3,
+   "originY": 3
+  }
+ }
+}

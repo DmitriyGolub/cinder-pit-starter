@@ -1,0 +1,69 @@
+{
+ "image": "executioner.png",
+ "frames": {
+  "executioner_walk0": {
+   "x": 69,
+   "y": 0,
+   "width": 64,
+   "height": 96,
+   "originX": 32,
+   "originY": 96
+  },
+  "executioner_walk1": {
+   "x": 134,
+   "y": 0,
+   "width": 66,
+   "height": 96,
+   "originX": 33,
+   "originY": 96
+  },
+  "executioner_walk2": {
+   "x": 0,
+   "y": 105,
+   "width": 65,
+   "height": 96,
+   "originX": 32,
+   "originY": 96
+  },
+  "executioner_walk3": {
+   "x": 66,
+   "y": 105,
+   "width": 66,
+   "height": 96,
+   "originX": 33,
+   "originY": 96
+  },
+  "executioner_aim": {
+   "x": 0,
+   "y": 0,
+   "width": 68,
+   "height": 104,
+   "originX": 34,
+   "originY": 104
+  },
+  "executioner_fire": {
+   "x": 0,
+   "y": 202,
+   "width": 68,
+   "height": 83,
+   "originX": 34,
+   "originY": 83
+  },
+  "executioner_pain": {
+   "x": 133,
+   "y": 105,
+   "width": 71,
+   "height": 91,
+   "originX": 35,
+   "originY": 91
+  },
+  "executioner_dead": {
+   "x": 69,
+   "y": 202,
+   "width": 83,
+   "height": 30,
+   "originX": 41,
+   "originY": 30
+  }
+ }
+}

@@ -1,0 +1,15 @@
+export const MESSAGES = {
+  elite: 'Элита рядом: убей её ради сундука',
+  swarm: 'Стая!',
+  boss: (name: string) => `${name} пробудился!`,
+  potion: (hp: number) => `+${hp} здоровья`,
+  magnet: 'Притяжение: все кристаллы летят к тебе',
+  bomb: 'Бомба!',
+  weapon: (name: string) => `Взял: ${name}`,
+  perk: (name: string) => `${name}: +1 навык`,
+  evolve: (name: string) => `Эволюция: ${name}!`,
+  chestGold: 'Сундук: золото',
+  chest: (title: string, level: number) => `Сундук: ${title} ${level}`,
+  goldTitle: 'Мешок золота',
+  goldDescription: (coins: number) => `+${coins} монет`,
+}

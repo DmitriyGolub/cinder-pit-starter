@@ -1,0 +1,69 @@
+{
+ "image": "eye.png",
+ "frames": {
+  "eye_walk0": {
+   "x": 47,
+   "y": 0,
+   "width": 45,
+   "height": 57,
+   "originX": 22,
+   "originY": 57
+  },
+  "eye_walk1": {
+   "x": 0,
+   "y": 59,
+   "width": 46,
+   "height": 54,
+   "originX": 23,
+   "originY": 54
+  },
+  "eye_walk2": {
+   "x": 93,
+   "y": 0,
+   "width": 45,
+   "height": 57,
+   "originX": 22,
+   "originY": 57
+  },
+  "eye_walk3": {
+   "x": 0,
+   "y": 0,
+   "width": 46,
+   "height": 58,
+   "originX": 23,
+   "originY": 58
+  },
+  "eye_aim": {
+   "x": 139,
+   "y": 0,
+   "width": 46,
+   "height": 56,
+   "originX": 23,
+   "originY": 56
+  },
+  "eye_fire": {
+   "x": 47,
+   "y": 59,
+   "width": 62,
+   "height": 54,
+   "originX": 31,
+   "originY": 54
+  },
+  "eye_pain": {
+   "x": 186,
+   "y": 0,
+   "width": 47,
+   "height": 55,
+   "originX": 23,
+   "originY": 55
+  },
+  "eye_dead": {
+   "x": 110,
+   "y": 59,
+   "width": 60,
+   "height": 30,
+   "originX": 30,
+   "originY": 30
+  }
+ }
+}

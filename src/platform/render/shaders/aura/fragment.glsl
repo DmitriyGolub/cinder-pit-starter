@@ -1,0 +1,31 @@
+uniform vec3 color;
+uniform float time;
+uniform float pulse;
+uniform float swirlA;
+uniform float swirlRateA;
+uniform float swirlTwistA;
+uniform float swirlB;
+uniform float swirlRateB;
+uniform float swirlTwistB;
+uniform float bodyBase;
+uniform float bodySwirl;
+uniform float bodyInner;
+uniform float bodyOuter;
+uniform float rimStart;
+uniform float rimPeak;
+uniform float waveSharp;
+uniform float waveFade;
+uniform float waveGain;
+uniform float flashGain;
+varying vec2 centeredUv;
+void main() {
+  float radius = length(centeredUv);
+  if (radius > 1.0) discard;
+  float angle = atan(centeredUv.y, centeredUv.x);
+  float swirl = sin(angle * swirlA + time * swirlRateA - radius * swirlTwistA) * sin(angle * swirlB - time * swirlRateB + radius * swirlTwistB);
+  float body = (bodyBase + bodySwirl * swirl) * smoothstep(bodyInner, bodyOuter, radius);
+  float rim = smoothstep(rimStart, rimPeak, radius) * (1.0 - smoothstep(rimPeak, 1.0, radius));
+  float wave = pulse < 0.0 ? 0.0 : exp(-pow((radius - pulse) * waveSharp, 2.0)) * (1.0 - pulse * waveFade);
+  float flash = pulse < 0.0 ? 0.0 : (1.0 - pulse) * flashGain * radius;
+  gl_FragColor = vec4(color * (body + rim + wave * waveGain + flash), 1.0);
+}

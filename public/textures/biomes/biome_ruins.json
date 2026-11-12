@@ -1,0 +1,41 @@
+{
+ "image": "biome_ruins.png",
+ "frames": {
+  "biome_ruins_wall0": {
+   "x": 0,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_ruins_wall1": {
+   "x": 65,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_ruins_ledge": {
+   "x": 130,
+   "y": 0,
+   "width": 64,
+   "height": 64
+  },
+  "biome_ruins_floor0": {
+   "x": 0,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  },
+  "biome_ruins_floor1": {
+   "x": 65,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  },
+  "biome_ruins_floor2": {
+   "x": 130,
+   "y": 65,
+   "width": 64,
+   "height": 64
+  }
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "image": "goblin.png",
+ "frames": {
+  "goblin_walk0": {
+   "x": 45,
+   "y": 0,
+   "width": 42,
+   "height": 50,
+   "originX": 21,
+   "originY": 50
+  },
+  "goblin_walk1": {
+   "x": 88,
+   "y": 0,
+   "width": 38,
+   "height": 50,
+   "originX": 19,
+   "originY": 50
+  },
+  "goblin_walk2": {
+   "x": 127,
+   "y": 0,
+   "width": 37,
+   "height": 50,
+   "originX": 18,
+   "originY": 50
+  },
+  "goblin_walk3": {
+   "x": 165,
+   "y": 0,
+   "width": 39,
+   "height": 50,
+   "originX": 19,
+   "originY": 50
+  },
+  "goblin_aim": {
+   "x": 0,
+   "y": 0,
+   "width": 44,
+   "height": 58,
+   "originX": 22,
+   "originY": 58
+  },
+  "goblin_fire": {
+   "x": 0,
+   "y": 59,
+   "width": 53,
+   "height": 47,
+   "originX": 26,
+   "originY": 47
+  },
+  "goblin_pain": {
+   "x": 205,
+   "y": 0,
+   "width": 43,
+   "height": 50,
+   "originX": 21,
+   "originY": 50
+  },
+  "goblin_dead": {
+   "x": 54,
+   "y": 59,
+   "width": 59,
+   "height": 28,
+   "originX": 29,
+   "originY": 28
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "image": "heroes.png",
+ "frames": {
+  "hunter_bust": {
+   "x": 0,
+   "y": 0,
+   "width": 256,
+   "height": 256
+  },
+  "hunter_portrait": {
+   "x": 0,
+   "y": 257,
+   "width": 128,
+   "height": 128
+  }
+ }
+}

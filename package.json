@@ -1,0 +1,40 @@
+{
+  "name": "cinder-pit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tests",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "map": "code-atlas build",
+    "map:check": "code-atlas check",
+    "diagrams": "code-atlas serve",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "bitecs": "^0.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "@vitest/coverage-v8": "^5.1.0",
+    "dependency-cruiser": "^18.7.2",
+    "knip": "^6.45.1",
+    "ts-code-atlas": "^0.1.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}

@@ -1,0 +1,89 @@
+{
+ "image": "keys.png",
+ "frames": {
+  "1": {
+   "x": 0,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "2": {
+   "x": 17,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "3": {
+   "x": 34,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "4": {
+   "x": 51,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "a": {
+   "x": 68,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "d": {
+   "x": 85,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "esc": {
+   "x": 102,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "mouse_left": {
+   "x": 119,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "mouse": {
+   "x": 136,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "r": {
+   "x": 153,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "s": {
+   "x": 170,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "shift_left": {
+   "x": 187,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "shift_right": {
+   "x": 204,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  },
+  "w": {
+   "x": 221,
+   "y": 0,
+   "width": 16,
+   "height": 16
+  }
+ }
+}

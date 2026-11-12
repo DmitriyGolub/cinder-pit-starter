@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+*.pk3 binary
+docs/code-atlas/** linguist-generated=true
