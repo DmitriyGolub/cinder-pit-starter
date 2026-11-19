@@ -4,6 +4,7 @@ import type { CameraView, RenderPort } from '../../game/ecs/ports'
 import { createOverlay } from './overlay/overlay'
 import { createLevelMesh } from './scene/levelMesh'
 import { createSpriteBatch } from './scene/spriteBatch'
+import { createViewModel } from './scene/viewModel'
 
 interface RenderContext extends RenderPort {
   readonly canvas: HTMLCanvasElement
@@ -34,6 +35,7 @@ export function createRenderContext(container: HTMLElement): RenderContext {
   const view: CameraView = { x: 0, y: 0, rightX: 1, rightY: 0, halfHorizontalFov: 0 }
   const overlay = createOverlay(overlayCanvas, camera)
   const sprites = createSpriteBatch(sky, camera)
+  const viewModel = createViewModel()
   const timer = new Timer()
   timer.connect(document)
   const level = createLevelMesh()
@@ -47,6 +49,7 @@ export function createRenderContext(container: HTMLElement): RenderContext {
     overlayCanvas.height = height
     camera.aspect = width / height
     camera.updateProjectionMatrix()
+    viewModel.resize(camera.aspect)
     view.halfHorizontalFov = Math.atan(Math.tan((RENDER.fov / 2) * DEGREES_TO_RADIANS) * camera.aspect)
   }
   resize()
@@ -73,6 +76,7 @@ export function createRenderContext(container: HTMLElement): RenderContext {
       renderer.setClearColor(sky)
     },
     showLevel: level.build,
+    setViewModel: viewModel.set,
     setLoop(frame) {
       renderer.setAnimationLoop(frame && ((timestamp) => {
         timer.update(timestamp)
@@ -82,6 +86,8 @@ export function createRenderContext(container: HTMLElement): RenderContext {
     render() {
       renderer.clear()
       renderer.render(scene, camera)
+      renderer.clearDepth()
+      viewModel.render(renderer)
     },
     dispose() {
       renderer.setAnimationLoop(null)
@@ -89,6 +95,7 @@ export function createRenderContext(container: HTMLElement): RenderContext {
       timer.dispose()
       overlay.dispose()
       level.dispose()
+      viewModel.dispose()
       renderer.dispose()
       renderer.domElement.remove()
     },

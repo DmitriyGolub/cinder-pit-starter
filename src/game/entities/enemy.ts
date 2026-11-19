@@ -5,6 +5,7 @@ import { ENEMY_WALK } from '../config/view'
 import { HP_PER_MINUTE } from '../config/waves'
 import { SPAWN } from '../config/spawn'
 import { Body, Enemy, Health, Hover, Knockback, NO_TARGET, Position, Shootable, Sprite, Target, Velocity } from '../ecs/components'
+import { addSprite } from './sprite'
 import type { GameWorld } from '../ecs/world'
 
 interface Point {
@@ -43,7 +44,7 @@ function setupHover(world: GameWorld, enemy: number, lift: number): void {
 
 export function spawnEnemy(world: GameWorld, config: EnemyConfig, x: number, y: number): number {
   const enemy = addEntity(world)
-  for (const component of [Enemy, Target, Position, Velocity, Knockback, Body, Health, Shootable, Sprite]) addComponent(world, enemy, component)
+  for (const component of [Enemy, Target, Position, Velocity, Knockback, Body, Health, Shootable]) addComponent(world, enemy, component)
   setupHover(world, enemy, config.lift ?? 0)
   placeEnemy(world, enemy, x, y)
   Body.radius[enemy] = config.radius
@@ -54,8 +55,7 @@ export function spawnEnemy(world: GameWorld, config: EnemyConfig, x: number, y: 
   Enemy.damage[enemy] = config.contactDamage
   Enemy.timer[enemy] = 0
   Target.entity[enemy] = NO_TARGET
-  Sprite.frame[enemy] = `${config.sprite}_walk0`
-  Sprite.scale[enemy] = 1
+  addSprite(world, enemy, { frame: `${config.sprite}_walk0` })
   Sprite.phase[enemy] = world.random() * ENEMY_WALK.frames
   return enemy
 }

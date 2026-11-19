@@ -5,9 +5,7 @@ import type { GameWorld } from '../../world'
 import { defineQuery } from '../../defineQuery'
 
 const drawnQuery = defineQuery([Sprite, Position])
-const NO_TINT = 0
-const NO_SQUASH = 1
-const NO_ROTATION = 0
+const FULL_LIGHT = 1
 
 export function spriteDrawSystem(world: GameWorld): void {
   const { sprites, view } = world.render
@@ -16,7 +14,8 @@ export function spriteDrawSystem(world: GameWorld): void {
     const x = Position.x[entity]
     const y = Position.y[entity]
     if (Math.hypot(x - view.x, y - view.y) > RENDER.fogFar) continue
-    sprites.add(Sprite.frame[entity], x, y, Position.z[entity], Sprite.scale[entity], lightAt(world.level, x, y), NO_TINT, false, NO_SQUASH, NO_ROTATION)
+    const light = Sprite.bright[entity] ? FULL_LIGHT : lightAt(world.level, x, y)
+    sprites.add(Sprite.frame[entity], x, y, Position.z[entity], Sprite.scale[entity], light, Sprite.tint[entity], Sprite.flip[entity] === 1, Sprite.squash[entity], Sprite.rotation[entity])
   }
   sprites.end()
 }

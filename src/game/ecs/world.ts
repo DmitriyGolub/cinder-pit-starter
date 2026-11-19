@@ -26,6 +26,7 @@ const SEED_RANGE = 2 ** 31
 
 interface RunState {
   time: number
+  kills: number
   mode: RunMode
 }
 
@@ -71,7 +72,7 @@ export function createGameWorld(context: Pick<GameContext, Provided>): GameWorld
     atmosphere: createAtmosphere(level),
     waves: { debt: 0, swarms: 0 },
     timers: new Map(),
-    run: { time: 0, mode: 'run' },
+    run: { time: 0, kills: 0, mode: 'run' },
     status: 'playing',
     events: createFrameEvents(),
   })

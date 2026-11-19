@@ -25,7 +25,10 @@ function indicators(world: GameWorld, viewer: number): Indicator[] {
 
 export function overlaySystem(world: GameWorld): void {
   const { overlay } = world.render
-  for (const angle of world.events.hurtFrom) overlay.addHurt(angle)
+  const { events } = world
+  for (const angle of events.hurtFrom) overlay.addHurt(angle)
+  for (const hit of events.hits) overlay.addNumber(hit)
+  if (events.confirmed > 0) overlay.addConfirm(events.crits > 0)
   for (const viewer of viewerQuery(world)) {
     overlay.draw({ delta: world.time.delta, facing: Rotation.yaw[viewer], indicators: indicators(world, viewer) })
   }

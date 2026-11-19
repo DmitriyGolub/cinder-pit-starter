@@ -43,8 +43,8 @@ Bitecs 0.4, three.js, React, Vite. Папки описаны в README.md, св�
 ## Порядок кадра
 
 - Порядок кадра задается только в `src/game/ecs/systems/index.ts`, система вне списка не работает.
-- Кадр: `clock, player*, targeting, chase, enemyCooldown, movement, hover, gravity, arena, spatial, separation, pathfield, ...spawn, contact, playerHurt, damage, lifetime, ...view, cleanup`.
-- Логика ставится до `lifetimeSystem`, отрисовка в `viewPipeline` (`atmosphere, levelView, enemyPose, spriteDraw, camera, overlay, hud`), `cleanupSystem` всегда последний.
+- Кадр: `clock, player*, weaponFire, targeting, chase, enemyCooldown, movement, hover, gravity, projectileMove, arena, spatial, separation, pathfield, ...spawn, playerShotHit, projectileWall, impact, contact, playerHurt, damage, enemyDeath, corpse, lifetime, ...view, cleanup`.
+- Логика ставится до `lifetimeSystem`, отрисовка в `viewPipeline` (`atmosphere, levelView, heading, directionalSprite, frameAnimation, spin, roll, enemyPose, spriteDraw, camera, weaponView, overlay, hud`), `cleanupSystem` всегда последний.
 - `arenaSystem` сдвигает все `Position` при переезде арены, поэтому `spatialSystem` стоит после него.
 - Системы спавна передаются в `simulation([...])`: отдельно для `pipeline` и `trainingPipeline`.
 - `viewPipeline` крутится и на паузе (`runView`), поэтому в view-системах нет игровой логики.
@@ -55,7 +55,8 @@ Bitecs 0.4, three.js, React, Vite. Папки описаны в README.md, св�
 
 - События кадра лежат в `world.events`, тип в `src/game/ecs/events.ts`, сброс в `clearFrameEvents`.
 - Новое поле события добавь в `FrameEvents`, `createFrameEvents` и `clearFrameEvents`.
-- Урон только событием `world.events.damage`: `contact` кладет, `playerHurt` гасит неуязвимостью, `damage` списывает HP и ставит `Dead`.
+- Урон только событием `world.events.damage`: `contact` кладет, `playerHurt` гасит неуязвимостью, `damage` списывает HP, `enemyDeath` ставит `Dead` и считает убийства, `corpse` делает труп.
+- Попадания и взрывы идут событием `world.events.impacts`, `impactSystem` ставит эффект и бьет по площади.
 - Связь с внешним миром только через порты из `src/game/ecs/ports.ts`: `world.render`, `world.input`, `world.hud`.
 - Пример порта: `world.render.setCamera(...)` в `cameraSystem.ts`.
 - Новый метод порта реализуй в `src/platform` или `src/app` и в заглушке `tests/support/game.ts`.
@@ -94,9 +95,5 @@ Bitecs 0.4, three.js, React, Vite. Папки описаны в README.md, св�
 
 ## Коммит
 
-- Перед коммитом задай пользователю 5 коротких поверхностных вопросов одним сообщением и коммить только после ответов.
-- 1. Что видно в браузере: совпадает ли с задачей? Пример: «туман меняет цвет на границе биомов?»
-- 2. Нет ли в диффе чужих правок, которые не надо брать? Пример: `components/enemy.ts` не из этой задачи.
-- 3. Какие числа конфига поменялись и устраивают ли? Пример: `ARENA.recenter` 14 → 20.
-- 4. Что осталось болванкой и это ок? Пример: `level.path` пока никто не читает.
-- 5. Одним коммитом или разбить, и какое сообщение? Пример: «Арена: пещеры, биомы, ходьба».
+- Перед коммитом запусти скилл `/grill-me` в режиме «перед коммитом» вместо поверхностных вопросов и коммить только после итога и «да».
+- Допрос идет по сделанному: смысл каждого поля заготовки, видимое в браузере, крайние случаи, конфиг, чужие правки, сообщение коммита. Пример: «`weapon.muzzle` я понял как сдвиг вбок, верно?» поймал бы баг с вылетом не из посоха.

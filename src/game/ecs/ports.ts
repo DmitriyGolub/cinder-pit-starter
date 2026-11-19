@@ -44,6 +44,7 @@ export interface RenderPort {
   setCamera(x: number, y: number, height: number, yaw: number): void
   setFog(red: number, green: number, blue: number): void
   showLevel(level: Level): void
+  setViewModel(frame: string, offsetX: number, offsetY: number, light: number): void
 }
 
 export interface InputPort {

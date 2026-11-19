@@ -1,4 +1,6 @@
 export * from './contactSystem'
+export * from './corpseSystem'
 export * from './damageSystem'
+export * from './enemyDeathSystem'
 export * from './playerHurtSystem'
 export * from './targetingSystem'

@@ -42,12 +42,15 @@ function createTestRender(): RenderPort {
     view,
     sprites: { begin: nothing, add: nothing, end: nothing, has: () => false },
     overlay: { addNumber: nothing, addHurt: nothing, addLightning: nothing, addProc: nothing, addConfirm: nothing, draw: nothing },
-    setCamera: (x, y) => {
+    setCamera: (x, y, _height, yaw) => {
       view.x = x
       view.y = y
+      view.rightX = -Math.sin(yaw)
+      view.rightY = Math.cos(yaw)
     },
     setFog: nothing,
     showLevel: nothing,
+    setViewModel: nothing,
   }
 }
 

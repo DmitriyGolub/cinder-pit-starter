@@ -1,3 +1,4 @@
+import type { EffectName } from '../config/effects'
 import type { OptionalStatusId } from '../config/status'
 
 export interface DamageEvent {
@@ -27,6 +28,16 @@ export interface StatusProc {
   icon: string
 }
 
+export interface ImpactEvent {
+  x: number
+  y: number
+  z: number
+  effect: EffectName
+  splash: number
+  damage: number
+  source: number
+}
+
 export interface FrameEvents {
   damage: DamageEvent[]
   hits: HitNumber[]
@@ -40,10 +51,11 @@ export interface FrameEvents {
   lightning: number[][]
   procs: StatusProc[]
   impact: number
+  impacts: ImpactEvent[]
 }
 
 export function createFrameEvents(): FrameEvents {
-  return { damage: [], hits: [], hurtFrom: [], confirmed: 0, crits: 0, messages: [], hurt: 0, pickup: 0, aura: 0, lightning: [], procs: [], impact: 0 }
+  return { damage: [], hits: [], hurtFrom: [], confirmed: 0, crits: 0, messages: [], hurt: 0, pickup: 0, aura: 0, lightning: [], procs: [], impact: 0, impacts: [] }
 }
 
 export function clearFrameEvents(events: FrameEvents): void {
@@ -59,4 +71,5 @@ export function clearFrameEvents(events: FrameEvents): void {
   events.lightning.length = 0
   events.procs.length = 0
   events.impact = 0
+  events.impacts.length = 0
 }

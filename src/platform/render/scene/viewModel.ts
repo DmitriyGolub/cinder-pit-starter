@@ -7,6 +7,7 @@ export function createViewModel() {
   const camera = new OrthographicCamera(-1, 1, 1, -1, 0, VIEW_SCREEN.far)
   const weapon = new Mesh(new PlaneGeometry(1, 1), new MeshBasicMaterial({ alphaTest: VIEW_SCREEN.alphaCutoff }))
   weapon.position.z = -VIEW_SCREEN.depth
+  weapon.visible = false
   scene.add(weapon)
   const textures = new Map<string, Texture>()
 
@@ -25,6 +26,7 @@ export function createViewModel() {
   return {
     set(frame: string, deltaX: number, deltaY: number, light: number): void {
       const sprite = getSprite(frame)
+      weapon.visible = true
       const texture = textureOf(frame)
       if (weapon.material.map !== texture) {
         weapon.material.map = texture

@@ -10,7 +10,7 @@ export const KNOCKBACK = {
   burst: 5,
 }
 
-export const PLAYER_SHOT = { muzzleDistance: 0.6, aimDrop: 0.05, riseTiles: 2, fan: 0.07, pelletsPerAmount: { single: 1, spread: 2 } }
+export const PLAYER_SHOT = { muzzleDistance: 0.6, aimDrop: 0.05, riseTiles: 2, fan: 0.07, autoAim: 0.12, surfaceSteps: 8, pelletsPerAmount: { single: 1, spread: 2 } }
 
 export const PROJECTILE = { radius: 0.15, life: 3, splashFactor: 0.6, returnTurn: 9, catchDistance: 0.5, retarget: 8, splashEffect: 1.3, hitBelow: 0.1, hitAbove: 0.2, frames: 2, fps: 10 }
 
