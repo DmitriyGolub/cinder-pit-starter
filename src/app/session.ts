@@ -1,6 +1,7 @@
 import { ARENA } from '../game/config/arena'
 import { createGameWorld, type GameWorld, type RunMode } from '../game/ecs/world'
 import type { HudPort, InputPort, RenderPort } from '../game/ecs/ports'
+import { spawnPlayer } from '../game/entities/player'
 import { mulberry32 } from '../game/math/random'
 import { createSpatialHash } from '../game/physics/spatialHash'
 import type { SaveData } from '../game/progression/save'
@@ -22,5 +23,6 @@ export function createRun(ports: SessionPorts, save: SaveData, mode: RunMode = '
     save,
   })
   world.run.mode = mode
+  spawnPlayer(world)
   return world
 }

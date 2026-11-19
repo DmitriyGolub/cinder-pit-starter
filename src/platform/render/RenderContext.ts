@@ -1,7 +1,8 @@
-import { Color, Fog, PerspectiveCamera, Scene, Timer, WebGLRenderer } from 'three'
+import { Color, Fog, PerspectiveCamera, SRGBColorSpace, Scene, Timer, WebGLRenderer } from 'three'
 import { RENDER } from '../../game/config/view'
 import type { CameraView, RenderPort } from '../../game/ecs/ports'
 import { createOverlay } from './overlay/overlay'
+import { createLevelMesh } from './scene/levelMesh'
 import { createSpriteBatch } from './scene/spriteBatch'
 
 interface RenderContext extends RenderPort {
@@ -27,14 +28,16 @@ export function createRenderContext(container: HTMLElement): RenderContext {
   const sky = new Color(RENDER.sky)
   renderer.setClearColor(sky)
   const scene = new Scene()
-  scene.fog = new Fog(sky, RENDER.fogNear, RENDER.fogFar)
+  const fog = new Fog(sky, RENDER.fogNear, RENDER.fogFar)
+  scene.fog = fog
   const camera = new PerspectiveCamera(RENDER.fov, 1, RENDER.near, RENDER.far)
   const view: CameraView = { x: 0, y: 0, rightX: 1, rightY: 0, halfHorizontalFov: 0 }
   const overlay = createOverlay(overlayCanvas, camera)
   const sprites = createSpriteBatch(sky, camera)
   const timer = new Timer()
   timer.connect(document)
-  scene.add(sprites.mesh)
+  const level = createLevelMesh()
+  scene.add(level.group, sprites.mesh)
 
   const resize = () => {
     const width = container.clientWidth || window.innerWidth
@@ -64,6 +67,12 @@ export function createRenderContext(container: HTMLElement): RenderContext {
       view.rightX = Math.cos(rotation)
       view.rightY = -Math.sin(rotation)
     },
+    setFog(red, green, blue) {
+      sky.setRGB(red, green, blue, SRGBColorSpace)
+      fog.color.copy(sky)
+      renderer.setClearColor(sky)
+    },
+    showLevel: level.build,
     setLoop(frame) {
       renderer.setAnimationLoop(frame && ((timestamp) => {
         timer.update(timestamp)
@@ -79,6 +88,7 @@ export function createRenderContext(container: HTMLElement): RenderContext {
       window.removeEventListener('resize', resize)
       timer.dispose()
       overlay.dispose()
+      level.dispose()
       renderer.dispose()
       renderer.domElement.remove()
     },

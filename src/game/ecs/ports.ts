@@ -1,3 +1,4 @@
+import type { Level } from '../arena/Level'
 import type { HitNumber, StatusProc } from './events'
 
 export interface CameraView {
@@ -41,6 +42,8 @@ export interface RenderPort {
   readonly sprites: SpriteDrawer
   readonly overlay: OverlayDrawer
   setCamera(x: number, y: number, height: number, yaw: number): void
+  setFog(red: number, green: number, blue: number): void
+  showLevel(level: Level): void
 }
 
 export interface InputPort {

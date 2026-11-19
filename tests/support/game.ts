@@ -5,6 +5,7 @@ import { runSystems } from '../../src/game/ecs/systems'
 import { createEmptySave, type SaveData } from '../../src/game/progression/save'
 
 const FRAME_TIME = 1 / 60
+const TEST_SEED = 7
 
 type Mutable<T> = { -readonly [Key in keyof T]: T[Key] }
 
@@ -41,13 +42,15 @@ function createTestRender(): RenderPort {
     sprites: { begin: nothing, add: nothing, end: nothing, has: () => false },
     overlay: { addNumber: nothing, addHurt: nothing, addLightning: nothing, addProc: nothing, addConfirm: nothing, draw: nothing },
     setCamera: nothing,
+    setFog: nothing,
+    showLevel: nothing,
   }
 }
 
 export const createTestSave = (): SaveData => createEmptySave()
 
-export function createTestRun(mode: RunMode = 'run', input: InputPort = createTestInput(), hud: HudPort = createTestHud()): GameWorld {
-  return createRun({ input, render: createTestRender(), hud }, createTestSave(), mode)
+export function createTestRun(mode: RunMode = 'run', input: InputPort = createTestInput(), hud: HudPort = createTestHud(), seed = TEST_SEED): GameWorld {
+  return createRun({ input, render: createTestRender(), hud }, createTestSave(), mode, seed)
 }
 
 export function simulate(world: GameWorld, seconds: number, everyFrame?: (world: GameWorld) => void): void {
