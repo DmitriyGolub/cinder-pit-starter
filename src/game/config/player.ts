@@ -11,4 +11,5 @@ export const PLAYER = {
   magnet: 2.2,
   invulnerabilityTime: 0.35,
   deadFriction: 0.85,
+  deadFrictionStep: 1 / 60,
 }

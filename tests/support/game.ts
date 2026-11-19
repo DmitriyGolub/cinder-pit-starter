@@ -37,11 +37,15 @@ export function createTestHud(): TestHud {
 
 function createTestRender(): RenderPort {
   const nothing = () => {}
+  const view = { x: 0, y: 0, rightX: 1, rightY: 0, halfHorizontalFov: 1 }
   return {
-    view: { x: 0, y: 0, rightX: 1, rightY: 0, halfHorizontalFov: 1 },
+    view,
     sprites: { begin: nothing, add: nothing, end: nothing, has: () => false },
     overlay: { addNumber: nothing, addHurt: nothing, addLightning: nothing, addProc: nothing, addConfirm: nothing, draw: nothing },
-    setCamera: nothing,
+    setCamera: (x, y) => {
+      view.x = x
+      view.y = y
+    },
     setFog: nothing,
     showLevel: nothing,
   }

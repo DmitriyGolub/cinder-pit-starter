@@ -1,4 +1,4 @@
-import { ARENA, ARENA_NOISE } from '../config/arena'
+import { ARENA, ARENA_NOISE, LEVEL_LIGHT } from '../config/arena'
 
 export const NO_PATH = 0xffff
 
@@ -60,4 +60,14 @@ export function floorHeight(level: Level, x: number, y: number): number {
 export function biomeAt(level: Level, x: number, y: number): number {
   const last = ARENA.size - 1
   return level.biome[cellAt(Math.min(last, Math.max(0, x)), Math.min(last, Math.max(0, y)))]
+}
+
+export function lightAt(level: Level, x: number, y: number): number {
+  const cell = cellAt(x, y)
+  return cell === OUTSIDE ? LEVEL_LIGHT.outside : level.light[cell]
+}
+
+export function isReachable(level: Level, x: number, y: number): boolean {
+  const cell = cellAt(x, y)
+  return cell !== OUTSIDE && level.path[cell] !== NO_PATH
 }

@@ -1,10 +1,11 @@
+import { Not } from 'bitecs'
 import { floorHeight } from '../../../arena/Level'
-import { Body, Position, Velocity } from '../../components'
+import { Body, Hover, Position, Velocity } from '../../components'
 import { GRAVITY, GROUND_EPSILON } from '../../../config/physics'
 import type { GameWorld } from '../../world'
 import { defineQuery } from '../../defineQuery'
 
-const fallingQuery = defineQuery([Position, Velocity, Body])
+const fallingQuery = defineQuery([Position, Velocity, Body, Not(Hover)])
 
 export function gravitySystem(world: GameWorld): void {
   const delta = world.time.delta

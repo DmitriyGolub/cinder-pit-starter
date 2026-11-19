@@ -17,6 +17,11 @@ interface Atmosphere {
   blue: number
 }
 
+interface WaveState {
+  debt: number
+  swarms: number
+}
+
 const SEED_RANGE = 2 ** 31
 
 interface RunState {
@@ -39,6 +44,7 @@ export interface GameContext {
   hash: SpatialHash
   level: Level
   atmosphere: Atmosphere
+  waves: WaveState
   run: RunState
   status: RunStatus
   events: FrameEvents
@@ -63,6 +69,7 @@ export function createGameWorld(context: Pick<GameContext, Provided>): GameWorld
     ...context,
     level,
     atmosphere: createAtmosphere(level),
+    waves: { debt: 0, swarms: 0 },
     timers: new Map(),
     run: { time: 0, mode: 'run' },
     status: 'playing',

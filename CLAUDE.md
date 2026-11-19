@@ -43,8 +43,8 @@ Bitecs 0.4, three.js, React, Vite. Папки описаны в README.md, св�
 ## Порядок кадра
 
 - Порядок кадра задается только в `src/game/ecs/systems/index.ts`, система вне списка не работает.
-- Кадр: `clock, playerLook, playerMove, movement, gravity, arena, spatial, pathfield, ...spawn, lifetime, ...view, cleanup`.
-- Логика ставится до `lifetimeSystem`, отрисовка в `viewPipeline` (`atmosphere, levelView, camera`), `cleanupSystem` всегда последний.
+- Кадр: `clock, player*, targeting, chase, enemyCooldown, movement, hover, gravity, arena, spatial, separation, pathfield, ...spawn, contact, playerHurt, damage, lifetime, ...view, cleanup`.
+- Логика ставится до `lifetimeSystem`, отрисовка в `viewPipeline` (`atmosphere, levelView, enemyPose, spriteDraw, camera, overlay, hud`), `cleanupSystem` всегда последний.
 - `arenaSystem` сдвигает все `Position` при переезде арены, поэтому `spatialSystem` стоит после него.
 - Системы спавна передаются в `simulation([...])`: отдельно для `pipeline` и `trainingPipeline`.
 - `viewPipeline` крутится и на паузе (`runView`), поэтому в view-системах нет игровой логики.
@@ -55,6 +55,7 @@ Bitecs 0.4, three.js, React, Vite. Папки описаны в README.md, св�
 
 - События кадра лежат в `world.events`, тип в `src/game/ecs/events.ts`, сброс в `clearFrameEvents`.
 - Новое поле события добавь в `FrameEvents`, `createFrameEvents` и `clearFrameEvents`.
+- Урон только событием `world.events.damage`: `contact` кладет, `playerHurt` гасит неуязвимостью, `damage` списывает HP и ставит `Dead`.
 - Связь с внешним миром только через порты из `src/game/ecs/ports.ts`: `world.render`, `world.input`, `world.hud`.
 - Пример порта: `world.render.setCamera(...)` в `cameraSystem.ts`.
 - Новый метод порта реализуй в `src/platform` или `src/app` и в заглушке `tests/support/game.ts`.

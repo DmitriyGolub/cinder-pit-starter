@@ -1,6 +1,7 @@
 export const MESSAGES = {
   elite: 'Элита рядом: убей её ради сундука',
   swarm: 'Стая!',
+  death: 'Ты пал',
   boss: (name: string) => `${name} пробудился!`,
   potion: (hp: number) => `+${hp} здоровья`,
   magnet: 'Притяжение: все кристаллы летят к тебе',

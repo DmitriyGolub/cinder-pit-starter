@@ -1,6 +1,12 @@
 import { ENTITIES_MAX } from '../../config/engine'
 
-export const Player = { invulnerabilityTime: new Float32Array(ENTITIES_MAX), walkX: new Float32Array(ENTITIES_MAX), walkY: new Float32Array(ENTITIES_MAX) }
+export const Player = {
+  invulnerabilityTime: new Float32Array(ENTITIES_MAX),
+  walkX: new Float32Array(ENTITIES_MAX),
+  walkY: new Float32Array(ENTITIES_MAX),
+  speed: new Float32Array(ENTITIES_MAX),
+  haste: new Float32Array(ENTITIES_MAX),
+}
 
 export const Dead = {}
 

@@ -54,7 +54,7 @@ describe('arena', () => {
 describe('walking', () => {
   it('walks forward with the keys and stays on the floor', () => {
     const input = createTestInput()
-    const world = createTestRun('run', input)
+    const world = createTestRun('training', input)
     const player = playerOf(world)
     input.moveY = 1
     simulate(world, 0.5)
@@ -64,7 +64,7 @@ describe('walking', () => {
 
   it('turns with the mouse', () => {
     const input = createTestInput()
-    const world = createTestRun('run', input)
+    const world = createTestRun('training', input)
     input.lookX = 0.1
     simulate(world, 0.1)
     expect(Rotation.yaw[playerOf(world)]).toBeGreaterThan(0.5)
@@ -72,7 +72,7 @@ describe('walking', () => {
 
   it('never walks into rock and never leaves the arena', () => {
     const input = createTestInput()
-    const world = createTestRun('run', input)
+    const world = createTestRun('training', input)
     const player = playerOf(world)
     simulate(world, 60, (frameWorld) => {
       steer(input, player)
@@ -85,7 +85,7 @@ describe('walking', () => {
 
   it('moves the caves with the player without an edge', () => {
     const input = createTestInput()
-    const world = createTestRun('run', input)
+    const world = createTestRun('training', input)
     const player = playerOf(world)
     const before = world.level.version
     let travelled = 0
@@ -101,7 +101,7 @@ describe('walking', () => {
 describe('atmosphere', () => {
   it('fades the fog to the biome under the player', () => {
     const input = createTestInput()
-    const world = createTestRun('run', input)
+    const world = createTestRun('training', input)
     const fogs: number[][] = []
     world.render.setFog = (red, green, blue) => { fogs.push([red, green, blue]) }
     world.atmosphere.red = 1
